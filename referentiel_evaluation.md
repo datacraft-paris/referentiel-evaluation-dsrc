@@ -271,7 +271,7 @@ Selon les niveaux de risque et de sensibilité des projets, certaines approches 
 - (Software & Tools) *[Opacus](https://opacus.ai/)*: *a Facebook Open Source project, to enable training PyTorch models with Differential Privacy*
 - (Web article) La *distillation* d'un modèle, en plus de la compression qu'elle apporte, peut être utilisée comme une mesure de protection du modèle et des données d'entraînement utilisées, voir par exemple *[Knowledge Distillation: Simplified](https://towardsdatascience.com/knowledge-distillation-simplified-dd4973dbc764)*, Towards Data Science, 2019
 - (Academic paper) *[Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531)*, G. Hinton, O. Vinyals, J. Dean, 2015
-
+- International AI safety report - section2.1.3. Cyberattacks page 57 https://internationalaisafetyreport.org/sites/default/files/2026-02/international-ai-safety-report-2026.pdf
 </details>
 
 ---
