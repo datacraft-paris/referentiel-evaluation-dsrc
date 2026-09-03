@@ -2,18 +2,18 @@
 
 Le [référentiel d'évaluation](#référentiel-dévaluation-de-la-maturité-dune-organisation) ci-dessous est le fruit du travail participatif initié au printemps 2019 par Labelia Labs (ex- Substra Foundation) et en cours depuis. Il procède de l'identification des [risques](#risques) que l'on cherche à prévenir en visant une pratique responsable et de confiance de la data science, et des bonnes pratiques qui permettent d'y faire face. Il regroupe également pour chaque sujet des ressources techniques qui peuvent être de bons points d'entrée pour les organisations intéressées.
 
-Dernière mise à jour : 1er semestre 2023.
+Dernière mise à jour : 2ème semestre 2026.
 
 ## Référentiel d'évaluation de la maturité d'une organisation
 
 L'évaluation est composée des 6 sections suivantes :
 
-- [Section 1 - Protéger les données personnelles ou confidentielles](#section-1---protéger-les-données-personnelles-ou-confidentielles)
+- [Section 1 - Protéger les données personnelles ou confidentielles](#section-1---protéger-les-données-à-caractère-personnel-ou-confidentielles-et-se-conformer-aux-exigences-réglementaires)
 - [Section 2 - Prévenir les biais, élaborer des modèles non discriminatoires](#section-2---prévenir-les-biais-élaborer-des-modèles-non-discriminatoires)
-- [Section 3 - Évaluer la performance de manière rigoureuse](#section-3---evaluer-la-performance-de-manière-rigoureuse)
+- [Section 3 - Évaluer la performance de manière rigoureuse](#section-3---évaluer-la-performance-de-manière-rigoureuse)
 - [Section 4 - Assurer la reproductibilité des modèles et en établir la chaîne de responsabilité](#section-4---assurer-la-reproductibilité-des-modèles-et-en-établir-la-chaîne-de-responsabilité)
 - [Section 5 - Utiliser des modèles en confiance et de manière responsable](#section-5---utiliser-des-modèles-en-confiance-et-de-manière-responsable)
-- [Section 6 - Anticiper, suivre et minimiser les externalités négatives de l'activité data science](#section-6---anticiper-suivre-et-minimiser-les-externalités-de-lactivité-data-science)
+- [Section 6 - Anticiper, suivre et minimiser les externalités négatives de l'activité data science](#section-6---anticiper-suivre-et-minimiser-les-externalités-négatives-de-lactivité-data-science)
 
 ---
 
@@ -72,7 +72,7 @@ _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturit�
 - [ ] 1.2.a Informelle, basée sur la responsabilité et la compétence de chacun
 - [ ] 1.2.b Formalisée et accessible à tous les collaborateurs
 - [ ] 1.2.c Formalisée et maîtrisée par les collaborateurs
-- [ ] 1.2.d Formalisée, maîtrisée par les collaborateurs, documentée pour chaque traitement de données personnelles ou confidentielles
+- [ ] 1.2.d Formalisée et maîtrisée par les collaborateurs, documentée pour chaque traitement de données personnelles ou confidentielles, et chaque système d'IA le requérant
 
 <details>
 <summary>Expl1.2 :</summary>
@@ -147,7 +147,7 @@ _(Type : réponse unique)_
 _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturité de l'organisation sur ce sujet)_  
 _(Domaine de risque spécifique : utilisation de données personnelles ou confidentielles)_
 
-- [ ] 1.5.a Nous faisons en sorte de n'utiliser aucune données personnelles ou confidentielles. Nous ne sommes pas concernés par cet univers de risque
+- [ ] 1.5.a Nous faisons en sorte de n'utiliser aucune données personnelles ou confidentielles | _(Concerné / Non concerné)_
 - [ ] 1.5.b Nous avons besoin d'en utiliser dans certains projets et le principe de minimisation est alors systématiquement appliqué
 - [ ] 1.5.c Le principe de minimisation est connu des collaborateurs, qui l'appliquent en général
 - [ ] 1.5.d Le réflexe "qui peut le plus peut le moins" vis-à-vis des données existe encore ici et là au sein de notre organisation. Dans certains projets, nous conservons des jeux de données beaucoup plus riches en données personnelles et confidentielles que ce qui est strictement utile au projet
@@ -159,10 +159,6 @@ _(Domaine de risque spécifique : utilisation de données personnelles ou confid
 Le principe de minimisation est parfois aussi évoqué par l'expression *privacy by design*. Il est un des piliers du RGPD.
 
 </details>
-  
----
-
-_Les éléments suivants au sein de cette section ne s'appliquent qu'aux organisations n'ayant pas sélectionné la première réponse de R1.5. Les organisations non concernées sont donc invitées à passer à la [Section 2](#section-2-prévenir-les-biais-élaborer-des-modèles-non-discriminatoires)._
 
 ---
 
@@ -189,17 +185,19 @@ Le *Privacy Impact Assessment* (PIA) est une méthode d'évaluation de l'impact 
 ---
 
 Q1.7 : **Sécurité de l'apprentissage automatique - Niveau de connaissance**  
-_(Condition : R1.5 <> 1.5.a)_  
+
 La sécurité de l'apprentissage automatique (_ML security_) est un domaine en constante évolution. Dans certains cas de figure, les modèle d'IA appris sur des données confidentielles peuvent révéler des éléments de ces données confidentielles (cf. articles cités en ressources). Au sein de votre organisation, au sujet des vulnérabilités liées aux modèles de ML et aux techniques pour s'en prémunir, le niveau de connaissance générale des collaborateurs intervenant sur les projets de data science est :
 
 R1.7 :  
 _(Type : réponse unique)_  
 _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturité de l'organisation sur ce sujet)_
+_(Domaine de risque spécifique : utilisation de modèles d'IA appris sur des données personnelles ou confidentielles)_
 
-- [ ] 1.7.a Complètement débutant
-- [ ] 1.7.b Basique
-- [ ] 1.7.c Confirmé
-- [ ] 1.7.d Expert
+- [ ] 1.7.a Nous n'utilisons pas de modèle d'IA appris sur des données personnelles ou confidentielles | _(Concerné / Non concerné)_
+- [ ] 1.7.b Complètement débutant
+- [ ] 1.7.c Basique
+- [ ] 1.7.d Confirmé
+- [ ] 1.7.e Expert
 
 <details>
 <summary>Expl1.7 :</summary>
@@ -233,7 +231,7 @@ L'état de l'art de la sécurité du ML est en constante évolution, et si la *m
 ---
 
 Q1.8 : **Sécurité de l'apprentissage automatique - Mise en oeuvre**  
-_(Condition : R1.5 <> 1.5.a)_  
+_(Condition : R1.7 <> 1.7.a)_  
 Toujours au sujet des vulnérabilités liées aux modèles de ML et aux techniques pour s'en prémunir :
 
 R1.8 :  
@@ -277,8 +275,7 @@ Selon les niveaux de risque et de sensibilité des projets, certaines approches 
 ---
 
 Q1.9 : **Notifications d’incidents de sécurité aux autorités de régulation**  
-_(Condition : R1.5 <> 1.5.a)_  
-Dans le cas de figure où un modèle que l'organisation a élaboré est utilisé ou accessible par une ou plusieurs parties prenantes externes, et qu'une vulnérabilité nouvelle est publiée, présente un risque de s'y appliquer et crée ainsi un risque d'exposition de données personnelles ou confidentielles :
+Dans le cas de figure où un modèle que l'organisation a élaboré est utilisé ou accessible par une ou plusieurs parties prenantes externes, et qu'une vulnérabilité nouvelle est publiée, présente un risque de s'y appliquer et crée ainsi un risque d'exposition de données personnelles ou confidentielles, quelles sont les procédures mises en place par votre organisation ?
 
 R1.9 :  
 _(Type : réponse unique)_  
@@ -307,22 +304,24 @@ L'utilisation de modèles d'IA élaborés à partir de données historiques peut
 Entre autres, dans certains cas une spécification de l'équité recherchée entre populations doit également être définie. L'équité d'un modèle peut [être définie de plusieurs manières qui peuvent être incompatibles entre elles](https://papers.nips.cc/paper/6995-counterfactual-fairness), et l'interprétation de scores de performances doit donc se faire dans le cadre de l'une de ces définitions.
 
 [_[⇧ retour à la liste des sections](#référentiel-dévaluation-de-la-maturité-dune-organisation)_]  
-[_[⇩ prochaine section](#section-3---evaluer-la-performance-de-manière-rigoureuse)_]
+[_[⇩ prochaine section](#section-3---évaluer-la-performance-de-manière-rigoureuse)_]
 
 ---
 
 Q2.1 : **Collecte et assemblage de données en jeux de données d'entraînement et de validation**  
-La collecte et l'assemblage de données brutes en jeux de données préparés pour entraîner et évaluer des modèles est souvent une phase préalable des projets de data science. Dans bien des cas elle présente des difficultés et est source de risques si elle n'est pas maîtrisée. Sur cette activité votre organisation a-t-elle défini, documenté et mis en oeuvre une approche ou une méthode prenant en compte notamment les points suivants :
+La collecte et l'assemblage de données brutes en jeux de données préparés pour entraîner et évaluer des modèles est souvent une phase préalable des projets de data science. Dans bien des cas, elle présente des difficultés et est source de risques si elle n'est pas maîtrisée. Sur cette activité votre organisation a-t-elle défini, documenté et mis en oeuvre une approche ou une méthode prenant en compte notamment les points suivants :
 
 R2.1 :  
 _(Type : réponses multiples possibles)_  
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation)_  
+_(Domaine de risque spécifique : collecte et assemblage de données brutes en jeux de données d'entraînement et de validation)_
 
-- [ ] 2.1.a Nous fonctionnons de manière informelle à ce sujet et nous en remettons à la pratique de chaque collaborateur impliqué
-- [ ] 2.1.b Notre approche inclut une ou des méthodes pour se prémunir contre les risques de poisoning attack lorsque des collectes de données sont mises en oeuvre
-- [ ] 2.1.c Notre approche inclut une ou des méthodes pour vérifier, et faire en sorte lorsque cela est nécessaire, que les jeux de données contiennent des samples d’événements rares
-- [ ] 2.1.d Notre approche inclut une ou des méthodes pour compléter des valeurs manquantes dans les jeux de données
-- [ ] 2.1.e Notre approche inclut une ou des méthodes pour traiter les points de données erronés ou atypiques
+- [ ] 2.1.a Nous ne procédons pas nous-mêmes à la collecte et à l'assemblage de données brutes en jeux de données d'entraînement et de validation | _(Concerné / Non concerné)_
+- [ ] 2.1.b Nous fonctionnons de manière informelle à ce sujet et nous en remettons à la pratique de chaque collaborateur impliqué
+- [ ] 2.1.c Notre approche inclut une ou des méthodes pour se prémunir contre les risques de poisoning attack lorsque des collectes de données sont mises en oeuvre
+- [ ] 2.1.d Notre approche inclut une ou des méthodes pour vérifier, et faire en sorte lorsque cela est nécessaire, que les jeux de données contiennent des samples d'événements rares
+- [ ] 2.1.e Notre approche inclut une ou des méthodes pour compléter des valeurs manquantes dans les jeux de données
+- [ ] 2.1.f Notre approche inclut une ou des méthodes pour traiter les points de données erronés ou atypiques
 
 <details>
 <summary>Expl2.1 :</summary>
@@ -347,17 +346,19 @@ Au sein des projets de data science et lors de l'élaboration de jeux de donnée
 R2.2 :  
 _(Type : réponse unique)_  
 _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturité de l'organisation sur ce sujet)_
+_(Domaine de risque spécifique : collecte et assemblage de données brutes en jeux de données d'entraînement et de validation)_
 
-- [ ] 2.2.a Fonctionne de manière informelle à ce sujet et s'en remet à la pratique de chaque collaborateur impliqué
-- [ ] 2.2.b Ne dispose pas d'une approche documentée sur le sujet, mais les collaborateurs impliqués sont formés aux risques et bonnes pratiques sur le sujet
-- [ ] 2.2.c Dispose d'une approche documentée et systématiquement mise en oeuvre
+- [ ] 2.2.a Ne collecte ni n'assemble elle-même de jeux de données d'entraînement | _(Concerné / Non concerné)_
+- [ ] 2.2.b Fonctionne de manière informelle à ce sujet et s'en remet à la pratique de chaque collaborateur impliqué
+- [ ] 2.2.c Ne dispose pas d'une approche documentée sur le sujet, mais les collaborateurs impliqués sont formés aux risques et bonnes pratiques sur le sujet
+- [ ] 2.2.d Dispose d'une approche documentée et systématiquement mise en oeuvre
 
 <details>
 <summary>Expl2.2 :</summary>
 
 Il s'agit de s'obliger à s'interroger sur ces sujets et donc à réfléchir aux données utilisées, la manière dont elles ont été produites etc. On peut penser par exemple :
-- au biais de captation, i.e. si les capteurs servant à capter des points de données ne sont pas identiques pour tous les points de données, ou bien entre les données de test et les données d’usage réel ;
-- à porter une attention particulière aux labels ou annotations associées aux points de données : comment ont-elles été générées ? avec quel niveau de certitude, de fiabilité, de qualité ? qui en sont les auteurs ? Les labels doivent être cohérents avec les objectifs du modèle et le domaine d’utilisation envisagé.
+- au biais de captation, i.e. si les capteurs servant à capter des points de données ne sont pas identiques pour tous les points de données, ou bien entre les données de test et les données d'usage réel ;
+- à porter une attention particulière aux labels ou annotations associées aux points de données : comment ont-elles été générées ? avec quel niveau de certitude, de fiabilité, de qualité ? qui en sont les auteurs ? Les labels doivent être cohérents avec les objectifs du modèle et le domaine d'utilisation envisagé.
 
 </details>
 
@@ -402,11 +403,11 @@ _(Sélectionner tous les éléments de réponse correspondant à des pratiques d
 _(Domaine de risque spécifique : discrimination à l'encontre de certains groupes sociaux)_
 
 - [ ] 2.4.a Nous ne traitons pas de thématique ou ne portons pas de projet correspondant à des cas de figure avec des risques de biais populationnel et de discrimination à l'encontre de certains groupes sociaux (genre, origine, âge, etc.) | _(Concerné / Non concerné)_
-- [ ] 2.4.b Nous portons une attention particulière à l'identification d'attributs protégés et à leurs proxys éventuels (par exemple étude une à une des variables utilisées en entrées du modèle pour recenser les corrélations qu’elles pourraient avoir avec des données sensibles)
+- [ ] 2.4.b Nous portons une attention particulière à l'identification d'attributs protégés et à leurs proxys éventuels (par exemple étude une à une des variables utilisées en entrées du modèle pour recenser les corrélations qu'elles pourraient avoir avec des données sensibles)
 - [ ] 2.4.c Nous procédons à des évaluations sur des données de test comprenant différentes sous-populations afin d'identifier les éventuels biais problématiques
 - [ ] 2.4.d Nous sélectionnons et mettons en oeuvre une ou plusieurs mesure(s) de justice et d'équité (_fairness metric_)
-- [ ] 2.4.e Nous mettons en oeuvre des approches de type _data augmentation_ ou _re-weighting_ dans le but de réduire les éventuels biais des jeux de données
-- [ ] 2.4.f Les pratiques ci-dessus que nous mettons en oeuvre sont dûment documentées et intégrées dans la documentation du cycle de vie de bout-en-bout des modèles concernés
+- [ ] 2.4.e Nous mettons en oeuvre des approches de type _data augmentation_ ou _re-weighting_ pour réduire les éventuels biais des jeux de données
+- [ ] 2.4.f Les pratiques ci-dessus que nous mettons en oeuvre sont dûment documentées et intégrées dans la documentation du cycle de vie des modèles concernés
 - [ ] 2.4.g Nous n'avons pas encore mis en place de mesures de ce type
 
 <details>
@@ -436,7 +437,7 @@ Complément sur l'utilisation de données synthétiques et d'approches de _data 
 ---
 
 Q2.5 : **Liens entre les choix de modélisation et les biais**  
-Des travaux récents mettent en évidence le rôle que peuvent jouer les choix de modélisation et d'apprentissage dans la formation de biais discriminatoires. Les techniques de renforcement de la confidentialité, la compression, le choix du *learning rate* ou les mécanismes d'*early stopping* par exemple peuvent contribuer à défavoriser certains sous-groupes de manière disproportionnée. Prévenir ces derniers n'est donc pas qu'une question de jeu de données. Au sein de votre organisation, sur ce sujet le niveau de connaissance générale des collaborateurs intervenant sur les projets de data science est :
+De nombreux travaux mettent en évidence le rôle que peuvent jouer les choix de modélisation et d'apprentissage dans la formation de biais discriminatoires. Les techniques de renforcement de la confidentialité, la compression, le choix du *learning rate* ou les mécanismes d'*early stopping* par exemple peuvent contribuer à défavoriser certains sous-groupes de manière disproportionnée. Prévenir ces phénomènes n'est donc pas qu'une question de jeu de données. Au sein de votre organisation, sur ce sujet le niveau de connaissance générale des collaborateurs intervenant sur les projets de data science est :
 
 R2.5 :  
 _(Type : réponse unique)_  
@@ -452,7 +453,7 @@ _(Domaine de risque spécifique : discrimination à l'encontre de certains group
 <details>
 <summary>Expl2.5 :</summary>
 
-Si les jeux de données utilisés pour entraîner et évaluer un modèle requièrent une réflexion particulière pour prévenir les biais discriminatoires, des travaux récents montrent qu'il en va de même pour les choix de modélisation. Comme le synthétise très bien l'article *Moving beyond “algorithmic bias is a data problem”* proposé dans les ressources, les paramètres de l'algorithme d'apprentissage, la structure du modèle, l'adjonction ou non de confidentialité différentielle, la compression éventuelle, etc. peuvent avoir des conséquences sur la *fairness* d'un modèle. Extraits :
+Si les jeux de données utilisés pour entraîner et évaluer un modèle requièrent une réflexion particulière pour prévenir les biais discriminatoires, des travaux récents montrent qu'il en va de même pour les choix de modélisation. Comme le synthétise très bien l'article *Moving beyond "algorithmic bias is a data problem"* proposé dans les ressources, les paramètres de l'algorithme d'apprentissage, la structure du modèle, l'adjonction ou non de confidentialité différentielle, la compression éventuelle, etc. peuvent avoir des conséquences sur la *fairness* d'un modèle. Extraits :
 
 > - *A key reason why model design choices amplify algorithmic bias is because notions of fairness often coincide with how underrepresented protected features are treated by the model*
 > - [...] *design choices to optimize for either privacy guarantees or compression amplify the disparate impact between minority and majority data subgroups*
@@ -466,7 +467,7 @@ Ces sujets étant très techniques, encore peu diffusés et connus des praticien
 <details>
 <summary>Ressources2.5 :</summary>
 
-- (Academic paper) *[Moving beyond “algorithmic bias is a data problem”](https://www.cell.com/patterns/fulltext/S2666-3899(21)00061-1)*, Sara Hooker, Opinion, Avril 2021
+- (Academic paper) *[Moving beyond "algorithmic bias is a data problem"](https://www.cell.com/patterns/fulltext/S2666-3899(21)00061-1)*, Sara Hooker, Opinion, Avril 2021
 - (Academic paper) *[Algorithmic Factors Influencing Bias in Machine Learning](https://arxiv.org/abs/2104.14014)*, W. Blanzeisky, P. Cunningham, April 2021: les auteurs définissent 4 types de choix algorithmiques pouvant être à l'origine de biais : *Data description (for the first version on the model, and feature engineering), Irreductible Errors, Impact of regularization (present in DL or more classical ML), Impact of class & feature imbalance*. Ces 4 types de choix peuvent générer ce qu'ils appellent un biais de sous-estimation (*underestimation bias*), qu'ils opposent à la *negative latency*, biais dûs aux données. Ils proposent des mesures de mitigation.
 - (Academic paper) *[Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings](https://arxiv.org/abs/1607.06520)*, T. Bolukbasi, K.-W. Chang, J. Zou, V. Saligrama, A. Kalai, 2016
 
@@ -493,10 +494,10 @@ R3.1 :
 _(Type : réponses multiples possibles)_  
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_
 
-- [ ] 3.1.a Fonctionne de manière informelle à ce sujet et s'appuie sur la compétence et la responsabilité des collaborateurs impliquées
+- [ ] 3.1.a Fonctionne de manière informelle à ce sujet et s'appuie sur la compétence et la responsabilité des collaborateurs impliqués
 - [ ] 3.1.b Dispose d'une approche documentée et systématiquement mise en oeuvre d'isolation des jeux de données de test
 - [ ] 3.1.c Utilise un outil de versionnage et de traçabilité des jeux de données d'entraînement et de test utilisés, permettant ainsi de vérifier ou auditer ultérieurement la non-contamination des données de tests
-- [ ] 3.1.d Les modalités de train-test split choisies sont évaluées, documentées et intégrées à la documentation du cycle de vie des modèles concernés
+- [ ] 3.1.d Les modalités de constitution des jeux de test (ex : train-test split) choisies sont évaluées, documentées et intégrées à la documentation du cycle de vie des modèles concernés
 
 <details>
 <summary>Expl3.1 :</summary>
@@ -536,13 +537,13 @@ Dans ce type de projet d'apprentissage distribué dans des conditions où les do
 ---
 
 Q3.3 : **Analyse des données de validation et de test**  
-Au sein des projets de data science et lors de l'élaboration de jeux de données de validation ou de test, un travail de réflexion et recherche de phénomènes problématiques (e.g. qualité de certains points de données, données non comparables du fait des outils ou processus d'enregistrement, phénomène social non souhaitable du fait de l'époque, du contexte, etc.) peut s'avérer crucial pour la signification des scores de performance. Votre organisation :
+Au sein des projets de data science et lors de l'élaboration de jeux de données de validation ou de test, un travail de réflexion et recherche de phénomènes problématiques (e.g. qualité de certains points de données, données non comparables du fait des outils ou processus d'enregistrement, phénomène social non souhaitable du fait de l'époque, du contexte, etc.) peut s'avérer crucial pour la signification des scores de performance (ou autres métriques d'évaluation). Votre organisation :
 
 R3.3 :  
 _(Type : réponse unique)_  
 _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturité de l'organisation sur ce sujet)_
 
-- [ ] 3.3.a Fonctionne de manière informelle à ce sujet et s'en remet à la pratique de chaque collaborateur impliqué
+- [ ] 3.3.a Fonctionne de manière informelle à ce sujet, et s'en remet à la pratique de chaque collaborateur impliqué
 - [ ] 3.3.b Ne dispose pas d'une approche documentée sur le sujet, mais les collaborateurs impliqués sont formés aux risques et bonnes pratiques sur le sujet
 - [ ] 3.3.c Dispose d'une approche documentée et systématiquement mise en oeuvre
 
@@ -601,7 +602,7 @@ _(Domaine de risque spécifique : utilisation de modèles d'IA dans des système
 - [ ] 3.5.b La performance est systématiquement ré-évaluée lorsque le modèle est mis à jour
 - [ ] 3.5.c La performance est systématiquement ré-évaluée lorsque le contexte d'utilisation du modèle évolue, ce qui peut créer un risque sur la performance du modèle du fait de l'évolution de l'espace des données d'entrée
 - [ ] 3.5.d La distribution des données d'entrée est monitorée, et la performance est ré-évaluée régulièrement sur des données de test actualisées
-- [ ] 3.5.e Des contrôles aléatoires sont réalisés sur des prédictions afin d'en contrôler la cohérence
+- [ ] 3.5.e Des contrôles aléatoires sont réalisés sur les sorties de nos modèles (ex : prédictions) afin d'en contrôler la cohérence
 - [ ] 3.5.f Nous ne mettons pas systématiquement en place de mesure de ce type
 
 <details>
@@ -634,7 +635,7 @@ R3.6 :
 _(Type : réponses multiples possibles)_  
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_
 
-- [ ] 3.6.a Fonctionne de manière informelle à ce sujet, selon les collaborateurs impliquées
+- [ ] 3.6.a Fonctionne de manière informelle à ce sujet, selon les collaborateurs impliqués
 - [ ] 3.6.b Dispose d'une approche documentée et systématiquement mise en oeuvre
 - [ ] 3.6.c Prend en compte la possibilité de maintenir des plages d'indécision dans certains cas de figure
 - [ ] 3.6.d Les choix réalisés pour chaque modèle et mis en oeuvre sont documentés et intégrés à la documentation du cycle de vie des modèles concernés
@@ -642,7 +643,7 @@ _(Sélectionner tous les éléments de réponse correspondant à des pratiques d
 <details>
 <summary>Expl3.6 :</summary>
 
-L'étude et à la sélection de seuils de décisions pertinents pour un problème de data science donné (*threshold selection*) est lié aux métriques retenues. Comme le présente l'article indiqué dans les ressources de cet élément d'évaluation, il peut être intéressant dans certains cas de considérer la possibilité de définir des plages d'indécision.
+L'étude et la sélection de seuils de décisions pertinents pour un problème de data science donné (*threshold selection*) sont liées aux métriques retenues. Comme le présente l'article indiqué dans les ressources de cet élément d'évaluation, il peut être intéressant dans certains cas de considérer la possibilité de définir des plages d'indécision. Par exemple : requérir une validation humaine lorsque la confiance d'un modèle est incertaine, ou configurer un système RAG/Agent pour qu'il refuse de répondre si le seuil de pertinence des sources n'est pas atteint.
 
 </details>
 
@@ -664,7 +665,7 @@ _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturit�
 _(Domaine de risque spécifique : utilisation de l'évaluation de la performance d'un système d'IA comme argument de communication et de marketing)_
 
 - [ ] 3.7.a Nous ne communiquons pas ou n'avons pas besoin de communiquer sur les résultats ou la performance de nos systèmes d'IA, et n'utilisons pas les résultats ou la performance de nos systèmes d'IA comme argument vis-à-vis de nos parties prenantes, nous ne sommes pas concernés par cet élément d'évaluation | _(Concerné / Non concerné)_
-- [ ] 3.7.b Nous communiquons sur les résultats ou la performance de nos sytèmes d'IA et nous appuyons sur ceux-ci pour notre développement sans faire auditer auparavant nos travaux par une tierce partie indépendante, sans mettre à disposition d'éléments de preuve
+- [ ] 3.7.b Nous communiquons sur les résultats ou la performance de nos systèmes d'IA et nous appuyons sur ceux-ci pour notre développement sans faire auditer auparavant nos travaux par une tierce partie indépendante, sans mettre à disposition d'éléments de preuve
 - [ ] 3.7.c Nous faisons auditer nos travaux par une tierce partie indépendante, ou nous mettons à disposition des éléments de preuve, avant de communiquer sur nos résultats et de nous en prévaloir vis-à-vis de nos parties prenantes
 
 <details>
@@ -688,7 +689,7 @@ L'élaboration d'un modèle d'IA, et la détermination d'une mesure de performan
 
 **[Documentation des modèles]**
 
-Un modèle d'IA est un objet informatique complexe qui peut évoluer au fil des apprentissages. Tracer les étapes de son élaboration et de son évolution permet de constituer une documentation de bout-en-bout de son **cycle de vie**, pré-requis pour **reproduire ou auditer** un modèle. Par ailleurs utiliser des systèmes automatiques basés sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interroge le fonctionnement des organisations. Il apparaît indispensable de garantir une chaîne de responsabilité claire, de personnes physiques ou morales, pour chaque modèle.
+Un modèle d'IA est un objet informatique complexe qui peut évoluer au fil des apprentissages. Tracer les étapes de son élaboration et de son évolution permet de constituer une documentation de bout en bout de son **cycle de vie**, pré-requis pour **reproduire ou auditer** un modèle. Par ailleurs, utiliser des systèmes automatiques basés sur des modèles d'IA interroge le fonctionnement des organisations. Il apparaît indispensable de garantir une chaîne de responsabilité claire, de personnes physiques ou morales, pour chaque modèle.
 
 [_[⇧ retour à la liste des sections](#référentiel-dévaluation-de-la-maturité-dune-organisation)_]  
 [_[⇩ prochaine section](#section-5---utiliser-des-modèles-en-confiance-et-de-manière-responsable)_]
@@ -696,7 +697,7 @@ Un modèle d'IA est un objet informatique complexe qui peut évoluer au fil des 
 ---
 
 Q4.1 : **Cycle de vie des modèles**  
-Tracer les étapes de l'élaboration d'un modèle permet de constituer une documentation de bout-en-bout de son **cycle de vie**. Au sein de votre organisation, une documentation du cycle de vie des modèles est alimentée et tenue à jour dans le cadre des projets de data science, tout au long des phase de collecte de données, conception, entraînement, validation et exploitation des modèles :
+Tracer les étapes de l'élaboration d'un modèle permet de constituer une documentation de bout en bout de son **cycle de vie**. Au sein de votre organisation, une documentation du cycle de vie des modèles est alimentée et tenue à jour dans le cadre des projets de data science, tout au long des phases de collecte de données, conception, entraînement ou configuration, validation et exploitation, et décommissionnement des modèles :
 
 R4.1 :  
 _(Type : réponse unique)_  
@@ -704,13 +705,14 @@ _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturit�
 
 - [ ] 4.1.a À ce stade nous n'avons pas mis en oeuvre d'approche de ce type
 - [ ] 4.1.b Ces informations existent et sont enregistrées afin de ne pas être perdues, mais elles peuvent l'être de manière désordonnée et ne sont pas versionnées
-- [ ] 4.1.c Elles sont rassemblées en un unique document qui accompagne systématiquement le modèle
-- [ ] 4.1.d Elles sont rassemblées en un unique document qui accompagne systématiquement le modèle et versionnées
+- [ ] 4.1.c Elles sont rassemblées en une documentation qui accompagne systématiquement le modèle
+- [ ] 4.1.d Elles sont rassemblées en une documentation qui accompagne systématiquement le modèle et versionnées
+- [ ] 4.1.e Elles sont rassemblées en une documentation qui accompagne systématiquement le modèle et versionnées, accessibles à toutes les parties prenantes concernées
 
 <details>
 <summary>Expl4.1 :</summary>
 
-Ce concept de "cycle de vie" d'un modèle d'IA appris peut se décliner sous la forme par exemple d'un document de référence reprenant tous les choix importants ainsi que tout l'historique d'élaboration du modèle (données utilisées, pré-traitements réalisés, type d'apprentissage et architecture du modèle, hyperparamètres sélectionnés, seuils de décision, métriques de tests...), etc.), et de processus internes organisant cette activité. En particulier, il est intéressant d'y faire figurer les choix de compromis (*trade-offs*) qui ont été faits et pourquoi (e.g. trade-offs précision-spécificité, performance-privacy, performance-coût computationnel, etc.).
+Ce concept de "cycle de vie" d'un modèle d'IA appris peut se décliner sous la forme par exemple d'un document de référence reprenant tous les choix importants ainsi que tout l'historique d'élaboration du modèle (données utilisées, pré-traitements réalisés, type d'apprentissage et architecture du modèle, hyperparamètres sélectionnés, seuils de décision, métriques de tests, etc.), et de processus internes organisant cette activité. En particulier, il est intéressant d'y faire figurer les choix de compromis (*trade-offs*) qui ont été faits et pourquoi (e.g. trade-offs précision-spécificité, performance-privacy, performance-coût computationnel, etc.).
 
 </details>
 
@@ -764,13 +766,12 @@ Q4.3 : **Analyse et partage d'incidents**
 Dans le cadre des projets de data science, lorsqu'un comportement inattendu d'un modèle est observé :
 
 R4.3 :  
-_(Type : réponses multiples possibles)_  
-_(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_
+_(Type : réponse unique)_  
+_(Sélectionner une seule réponse, correspondant le mieux au niveau de maturité de l'organisation sur ce sujet)_
 
 - [ ] 4.3.a À ce stade nous ne faisons pas d'analyse des incidents ou comportements inattendus observés
 - [ ] 4.3.b Nous analysons les incidents ou comportements inattendus rencontrés, mais ne les publions pas
 - [ ] 4.3.c Nous analysons les incidents ou comportements inattendus rencontrés et les publions lorsque cela est pertinent (e.g. article, blog)
-- [ ] 4.3.d Nous nous impliquons dans des clubs, cercles, ou associations professionnelles dans le domaine de la data science, et y faisons des retours d'expérience des incidents comportements inattendus que nous observons
 
 <details>
 <summary>Expl4.3 :</summary>
@@ -799,7 +800,7 @@ _(Type : réponses multiples possibles)_
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_  
 _(Domaine de risque spécifique : rôles et responsabilités morcelés dans les projets de data science)_
 
-- [ ] 4.4.a Au sein de notre organisation les projets de data science sont menés de bout-en-bout par des équipes autonomes, y compris l'élaboration de jeux de données et l'exploitation pour son propre compte des modèles. En conséquence, pour chaque projet une équipe autonome est seule responsable | _(Concerné / Non concerné)_
+- [ ] 4.4.a Au sein de notre organisation les projets de data science sont menés de bout en bout par des équipes autonomes, y compris l'élaboration de jeux de données et l'exploitation pour son propre compte des modèles. En conséquence, pour chaque projet une équipe autonome est seule responsable | _(Concerné / Non concerné)_
 - [ ] 4.4.b Nous procédons systématiquement à l'identification des risques et responsabilités de chacune des parties prenantes internes ou externes avec lesquelles nous collaborons
 - [ ] 4.4.c Nous contractualisons systématiquement avec les acteurs amont (e.g. fournisseurs de données) et aval (e.g. clients, partenaires utilisateurs de modèles)
 - [ ] 4.4.d Nous ne mettons pas systématiquement en place de mesure de ce type
@@ -828,36 +829,32 @@ _(Domaine de risque spécifique : sous-traitance d'activités de data science)_
 <details>
 <summary>Expl4.5 :</summary>
 
-Comme dans les cadres connues du management des SI (ISO 27001) ou du RGPD, il est important de ne pas diluer les responsabilités dans des chaînes de sous-traitance non maîtrisées. Cela doit s'appliquer par exemple aux consultants, freelances qui viennent renforcer une équipe interne sur un projet de data science. Il est par exemple possible de demander aux sous-traitants de réaliser cette même évaluation pour leur propre compte et de partager avec vous leurs résultats.
+Comme dans les cadres connus du management des SI (ISO 27001) ou du RGPD, il est important de ne pas diluer les responsabilités dans des chaînes de sous-traitance non maîtrisées. Cela doit s'appliquer par exemple aux consultants, freelances qui viennent renforcer une équipe interne sur un projet de data science. Il est par exemple possible de demander aux sous-traitants de réaliser cette même évaluation pour leur propre compte et de partager avec vous leurs résultats.
 
 </details>
 
 ---
 
-Q4.6 : **Répartition de la création de valeur**  
-Dans les cas de figure des projets de data science où plusieurs partenaires concourent aux côtés de votre organisation à l'élaboration d'un modèle, et que celui-ci est ou sera l'objet d'une activité économique :
+Q4.6 : **Utilisation de modèles ou systèmes d'IA externes**  
+De nombreux projets de data science s'appuient aujourd'hui, en tout ou partie, sur des modèles ou composants d'IA externes plutôt que sur un modèle entièrement conçu et entraîné en interne — qu'il s'agisse d'un modèle utilisé tel quel (API, encodeur, modèle de fondation) ou intégré comme brique au sein d'un système plus large conçu par l'organisation (par exemple un agent s'appuyant sur un LLM tiers). Sur l'attention portée à ces modèles ou composants externes, votre organisation :
 
 R4.6 :  
 _(Type : réponses multiples possibles)_  
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_  
-_(Domaine de risque spécifique : rôles et responsabilités morcelés dans les projets de data science)_
+_(Domaine de risque spécifique : utilisation de modèles ou composants d'IA externes)_
 
-- [ ] 4.6.a Notre organisation exerce ses activités de data science de manière autonome, y compris l'élaboration de jeux de données et l'exploitation pour son propre compte des modèles. Elle n'est donc pas concernée | _(Concerné / Non concerné)_
-- [ ] 4.6.b À ce stade nous n'avons pas structuré cet aspect des projets de data science multi-partenaires
-- [ ] 4.6.c Dans ces cas de figure nous contractualisons le volet économique de la relation avec les parties prenantes impliquées en amont du projet
-- [ ] 4.6.d Notre organisation s'est dotée d'une politique encadrant de manière responsable le partage de valeur avec les parties prenantes impliquées
+- [ ] 4.6.a N'utilise pas de modèles ou composants d'IA externes | _(Concerné / Non concerné)_
+- [ ] 4.6.b Fonctionne de manière informelle à ce sujet, sans étude préalable systématique
+- [ ] 4.6.c Mène une étude de ce que le fournisseur communique sur les vulnérabilités, biais et limites connues du modèle ou composant, et la prend en compte lors du choix de son intégration
+- [ ] 4.6.d Maintient une veille sur les évolutions du modèle ou composant décidées par le fournisseur (mise à jour, dépréciation, changement de version), afin d'anticiper leur impact sur les usages
+- [ ] 4.6.e Met en oeuvre des pratiques permettant d'en limiter les conséquences sur les systèmes concernés lorsqu'une vulnérabilité ou un changement significatif est identifié côté fournisseur
+- [ ] 4.6.f Documente ces pratiques et les intègre à la documentation du cycle de vie du projet, au même titre que pour les modèles élaborés en interne
 
 <details>
 <summary>Expl4.6 :</summary>
 
-Lorsque plusieurs partenaires collaborent pour l'élaboration d'un modèle, il est important que la répartition de valeur consécutives à une activité économique dans laquelle le modèle joue un rôle soit explicitée et contractualisée. Dans certains cas de figure cette question peut être complexe, par exemple lorsqu'un modèle est entraîné de manière distribuée sur plusieurs jeux de données.
-
-</details>
-
-<details>
-<summary>Ressources4.6 :</summary>
-
-- (Code repository) [Exploration of dataset contributivity to a model in collaborative ML projects](https://github.com/SubstraFoundation/distributed-learning-contributivity), un projet open source animé par [ Labelia Labs (ex- Substra Foundation)](https://www.labelia.org/)
+L'essor des modèles de fondation, des API d'IA générative et des hubs de modèles pré-entraînés a profondément changé la pratique de la data science. De nombreux projets n'impliquent plus la conception d'un modèle depuis zéro, mais l'intégration ou l'adaptation d'un modèle ou composant tiers — que ce soit de façon directe (un modèle utilisé tel quel via une API) ou indirecte (un système ou un agent conçu en interne, mais qui repose sur un modèle pré-entraîné externe comme fondation).
+Cette évolution déplace une partie du risque : il ne s'agit plus seulement de maîtriser ce que l'on construit, mais d'évaluer et de suivre dans le temps ce que l'on choisit d'utiliser. Contrairement à un modèle élaboré en interne, un modèle externe évolue selon un calendrier que l'organisation ne maîtrise pas (mise à jour silencieuse, dépréciation, faille découverte a posteriori par la communauté), ce qui rend la veille au moins aussi importante que l'étude initiale.
 
 </details>
 
@@ -868,10 +865,10 @@ Lorsque plusieurs partenaires collaborent pour l'élaboration d'un modèle, il e
 
 **[Utilisation des modèles]**
 
-Un modèle d'IA peut-être utilisé comme un système automatique, dont les règles de fonctionnement ne sont pas écrites _in extenso_ et ne se prêtent pas ou mal à être explicitées, débattues, ajustées. Utiliser des systèmes automatiques basés sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interroge donc le fonctionnement des organisations. Il est important de préserver la capacité de réaction et la résilience de l'organisation utilisatrice, notamment pour traiter les cas de figure où les modèles d'IA auront été à l'origine d'un résultat non souhaitable pour l'organisation ou ses parties prenantes. Par ailleurs, des efforts sont donc nécessaires sur l'interprétation et l'explication des choix réalisés à l'aide de ces systèmes.
+Un modèle d'IA peut être utilisé comme un système automatique, dont le fonctionnement se prête mal à être explicité, débattu, ajusté. Cela interroge le fonctionnement des organisations qui y ont recours. Il est important de préserver la capacité de réaction et la résilience de l'organisation utilisatrice, notamment pour traiter les cas de figure où les modèles d'IA auront été à l'origine d'un résultat non souhaitable pour l'organisation ou ses parties prenantes. Des efforts sont par ailleurs nécessaires sur l'interprétation et l'explication des choix réalisés à l'aide de ces systèmes.
 
 [_[⇧ retour à la liste des sections](#référentiel-dévaluation-de-la-maturité-dune-organisation)_]  
-[_[⇩ prochaine section](#section-6---anticiper-suivre-et-minimiser-les-externalités-de-lactivité-data-science)_]
+[_[⇩ prochaine section](#section-6---anticiper-suivre-et-minimiser-les-externalités-négatives-de-lactivité-data-science)_]
 
 ---
 
@@ -883,10 +880,10 @@ _(Type : réponses multiples possibles)_
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_  
 _(Domaine de risque spécifique : utilisation de modèles d'IA pour son propre compte, fourniture et opération de modèles d'IA à ses clients ou à des tiers)_
 
-- [ ] 5.1.a Notre organisation n'utilise pas de modèles d'IA élaborés par apprentissage automatique pour son propre compte | _(Concerné / Non concerné)_
+- [ ] 5.1.a Notre organisation n'utilise pas de modèles d'IA pour son propre compte | _(Concerné / Non concerné)_
 - [ ] 5.1.b **Un registre des modèles d'IA** identifie tous les modèles utilisés par l'organisation, nous le maintenons à jour
-- [ ] 5.1.c Pour chaque modèle nous disposons d'un **responsable point de contact** défini, identifiable et contactable simplement
-- [ ] 5.1.d Pour chaque modèle, nous réalisons systématiquement une **évaluation des risques** consécutifs à d'éventuels incidents, défaillances ou biais
+- [ ] 5.1.c Pour chaque modèle, nous disposons d'un **responsable point de contact** défini, identifiable et contactable simplement
+- [ ] 5.1.d Pour chaque modèle, nous réalisons systématiquement une **évaluation des risques** consécutifs à d'éventuels incidents, défaillances et biais
 - [ ] 5.1.e Des outils de monitoring sont mis en place afin d'assurer une surveillance continue des systèmes basés sur des modèles d'IA et peuvent déclencher des alertes directement auprès de l'équipe responsable
 - [ ] 5.1.f Pour chaque modèle, nous définissons et testons une procédure de suspension du modèle et un mode de fonctionnement dégradé sans le modèle, pour parer au cas de figure où le modèle serait sujet à une défaillance ou un comportement anormal
 - [ ] 5.1.g Pour chaque modèle, nous étudions son cycle de vie (toutes les étapes et tous les choix qui ont conduit à son élaboration et son évaluation), ainsi que ses conditions et limites d'utilisation, pour comprendre le modèle avant de l'utiliser
@@ -896,7 +893,7 @@ _(Domaine de risque spécifique : utilisation de modèles d'IA pour son propre c
 <details>
 <summary>Expl5.1 :</summary>
 
-Utiliser des systèmes automatiques basés sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interroge le fonctionnement des organisations. Il est important d'évaluer les conséquences et les réactions en cas d'incident. Par ailleurs il est important qu'une personne responsable soit clairement identifiée de manière à ne laisser aucune partie prenante démunie face à une conséquence inattendue ou inappropriée. Enfin il est important de s'interroger sur les "conditions et limites de validité" des modèles que l'on utilise afin de s'assurer que l'usage que l'on prévoit est bien en adéquation.
+Utiliser des systèmes automatiques basés sur des modèles d'IA interroge le fonctionnement des organisations. Il est important d'évaluer les conséquences et les réactions en cas d'incident. Par ailleurs il est important qu'une personne responsable soit clairement identifiée de manière à ne laisser aucune partie prenante démunie face à une conséquence inattendue ou inappropriée. Enfin il est important de s'interroger sur les "conditions et limites de validité" des modèles que l'on utilise afin de s'assurer que l'usage que l'on prévoit est bien en adéquation.
 
 </details>
 
@@ -910,27 +907,27 @@ _(Type : réponses multiples possibles)_
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_  
 _(Domaine de risque spécifique : utilisation de modèles d'IA pour son propre compte, fourniture et opération de modèles d'IA à ses clients ou à des tiers)_
 
-- [ ] 5.2.a Notre organisation ne fournit pas à ses clients ou des tiers, et n'opère pas pour le compte de tiers d'application basée sur des modèles d'IA élaborés par apprentissage automatique | _(Concerné / Non concerné)_
+- [ ] 5.2.a Notre organisation ne fournit pas à ses clients ou à des tiers, et n'opère pas pour le compte de tiers d'application basée sur des modèles d'IA | _(Concerné / Non concerné)_
 - [ ] 5.2.b **Un registre des modèles d'IA** identifie tous les modèles ou applications utilisés par ses clients et/ou par l'organisation pour le compte de tiers, nous le maintenons à jour
-- [ ] 5.2.c Pour chaque modèle ou application pour un client ou un tiers nous disposons d'un **responsable point de contact** défini, identifiable et joignable simplement
-- [ ] 5.2.d Pour chaque modèle ou application pour un client ou un tiers, nous réalisons systématiquement une **évaluation des risques** consécutifs à d'éventuels, incidents, défaillances, biais
+- [ ] 5.2.c Pour chaque modèle ou application pour un client ou un tiers, nous disposons d'un **responsable point de contact** défini, identifiable et joignable simplement
+- [ ] 5.2.d Pour chaque modèle ou application pour un client ou un tiers, nous réalisons systématiquement une **évaluation des risques** consécutifs à d'éventuels incidents, défaillances et biais
 - [ ] 5.2.e Des outils de monitoring sont mis en place afin d'assurer une surveillance continue des systèmes de ML et peuvent déclencher des alertes directement auprès de l'équipe responsable
 - [ ] 5.2.f Pour chaque modèle ou application pour un client ou un tiers, nous définissons et testons une procédure de suspension du modèle et un mode de fonctionnement dégradé sans le modèle, pour parer au cas de figure où le modèle serait sujet à une défaillance ou un comportement anormal
-- [ ] 5.2.g Pour chaque modèle ou application pour un client ou un tiers, nous étudions son cycle de vie de bout-en-bout et ses conditions et limites d'utilisation pour comprendre le modèle avant de l'utiliser
+- [ ] 5.2.g Pour chaque modèle ou application pour un client ou un tiers, nous étudions son cycle de vie de bout en bout et ses conditions et limites d'utilisation pour comprendre le modèle avant de l'utiliser
 - [ ] 5.2.h Nous fournissons à nos clients ou opérons pour leur compte des modèles ou applications pour des **usages en adéquation avec leurs conditions et limites d'utilisation**
 - [ ] 5.2.i Nous n'avons pas encore mis en place de mesure de ce type
 
 <details>
 <summary>Expl5.2 :</summary>
 
-Utiliser des systèmes automatiques basés sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interroge le fonctionnement des organisations. Il est important d'évaluer les conséquences et les réactions en cas d'incident. Par ailleurs il est important qu'une personne responsable soit clairement identifiée de manière à ne laisser aucune partie prenante démunie face à une conséquence inattendue ou inappropriée. Enfin il est important de s'interroger sur les "conditions et limites de validité" des modèles que l'on utilise afin de s'assurer que l'usage que l'on prévoit est bien en adéquation.
+Utiliser des systèmes automatiques basés sur des modèles d'IA interroge le fonctionnement des organisations. Il est important d'évaluer les conséquences et les réactions en cas d'incident. Par ailleurs il est important qu'une personne responsable soit clairement identifiée de manière à ne laisser aucune partie prenante démunie face à une conséquence inattendue ou inappropriée. Enfin il est important de s'interroger sur les "conditions et limites de validité" des modèles que l'on utilise afin de s'assurer que l'usage que l'on prévoit est bien en adéquation.
 
 </details>
 
 ---
 
-Q5.3 : **Gestion des prédictions problématiques, processus de contournement, _human agency_**  
-Les systèmes automatiques, en particulier lorsqu'ils s'appuient sur des modèles d'IA, sont utilisés en production généralement pour gagner en efficacité. Il se trouve que par nature, ils génèrent de temps en temps des résultats non souhaitables pour l'organisation et ses parties prenantes (e.g. prédiction erronée), puisqu'ils ne généraliseront jamais une performance de 100%.
+Q5.3 : **Gestion des prédictions problématiques, processus de contournement, intervention humaine**  
+Les systèmes automatiques, en particulier lorsqu'ils s'appuient sur des modèles d'IA, sont utilisés en production généralement pour gagner en efficacité. Il se trouve que par nature, ils génèrent de temps en temps des résultats non souhaitables pour l'organisation et ses parties prenantes. Sur ce sujet :
 
 R5.3 :  
 _(Type : réponse unique)_  
@@ -940,13 +937,13 @@ _(Domaine de risque spécifique : utilisation de modèles d'IA pour son propre c
 - [ ] 5.3.a Notre organisation n'utilise pas de modèles d'IA pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA | _(Concerné / Non concerné)_
 - [ ] 5.3.b Nous implémentons des modèles d'IA dans des systèmes automatiques intégrés, sans mécanismes permettant de pallier à ou d'éviter des résultats non souhaitables dûs aux prédictions des modèles
 - [ ] 5.3.c Nous intégrons, dans les systèmes automatiques s'appuyant sur des modèles d'IA, les fonctionnalités permettant de gérer ces cas de résultats non souhaitables. Pour ces cas de figure, nous mettons en place des mécanismes permettant à un opérateur humain d'aller contre une décision automatique pour gérer de tels résultats non souhaitables ou incidents
-- [ ] 5.3.d En complément des mécanismes de gestion d'incident, dans les systèmes automatiques s'appuyant sur des modèles d'IA, lorsque l'intervalle de confiance pour la décision automatique n'est pas satisfaisant un opérateur humain est sollicité
-- [ ] 5.3.e Nous appliquons systématiquement le principe de *human agency*, les sorties des modèles d'IA que nous mettons en oeuvre sont utilisées par des opérateurs humains, et ne servent pas de déterminants à des décisions automatiques
+- [ ] 5.3.d En complément des mécanismes de gestion d'incident, dans les systèmes automatiques s'appuyant sur des modèles d'IA, lorsque l'indicateur de fiabilité pour la décision automatique n'est pas satisfaisant un opérateur humain est sollicité
+- [ ] 5.3.e Nous réalisons systématiquement une analyse de risque et appliquons, lorsque nécessaire, le principe d'intervention humaine. Les sorties des modèles d'IA que nous mettons en oeuvre sont utilisées par des opérateurs humains, et ne servent pas de déterminants à des décisions automatiques
 
 <details>
 <summary>Expl5.3 :</summary>
 
-Utiliser des systèmes automatiques basés entre autres sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interroge le fonctionnement des organisations. Il est important de préserver la capacité de réaction et la résilience de l'organisation.
+Utiliser des systèmes automatiques basés entre autres sur des modèles d'IA interroge le fonctionnement des organisations. Il est important de préserver la capacité de réaction et la résilience de l'organisation.
 
 </details>
 
@@ -969,9 +966,8 @@ _(Sélectionner tous les éléments de réponse correspondant à des pratiques d
 
 - [ ] 5.4.a Notre organisation n'est pour l'instant pas familière avec les méthodes et outils d'explicabilité et d'interprétabilité des modèles
 - [ ] 5.4.b Nous nous intéressons au sujet de l'explicabilité et l'interprétabilité des modèles et dialoguons avec nos parties prenantes sur ce sujet
-- [ ] 5.4.c Nous faisons en sorte que les modèles que nous élaborons fournissent lorsque cela est pertinent a minima un niveau de confiance avec chaque prédiction réalisée
-- [ ] 5.4.d Nous déterminons le meilleur compromis entre la performance et l'interprétabilité pour chaque modèle que nous élaborons, ce qui nous amène parfois à opter pour un modèle plus simple à expliquer aux personnes concernées (un modèle performant permettra de diminuer les risques d’erreur tandis qu’un modèle interprétable permettra de mieux justifier les résultats du modèle)
-- [ ] 5.4.e Nous maîtrisons et mettons en oeuvre des approches avancées pour l'explicabilité et l'interprétabilité des modèles
+- [ ] 5.4.c Nous faisons en sorte que les modèles que nous élaborons fournissent lorsque cela est pertinent, a minima un niveau de confiance avec chaque résultat produit
+- [ ] 5.4.d Nous maîtrisons et mettons en oeuvre des approches réfléchies pour l'explicabilité et l'interprétabilité des modèles
 
 <details>
 <summary>Expl5.4 :</summary>
@@ -996,7 +992,7 @@ Des ressources techniques comme SHAP ou LIME permettent d'entrer de plain-pied d
 
 ---
 
-Q5.5 : **Transparence vis-à-vis des parties prenantes interagissant avec un modèle d'IA appris**  
+Q5.5 : **Transparence vis-à-vis des parties prenantes interagissant avec un modèle d'IA**  
 Votre organisation utilise pour son propre compte, fournit à ses clients ou opère pour le compte de ses clients des applications basées sur des modèles d'IA, avec lesquels sont à même d'interagir des utilisateurs. Que met-elle en place pour en informer les utilisateurs ?
 
 R5.5 :  
@@ -1004,17 +1000,17 @@ _(Type : réponses multiples possibles)_
 _(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_  
 _(Domaine de risque spécifique : utilisation de modèles d'IA pour son propre compte, fourniture et opération de modèles d'IA à ses clients ou à des tiers)_
 
-- [ ] 5.5.a Notre organisation n'utilise pas de modèles d'IA élaborés par apprentissage automatique pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA | _(Concerné / Non concerné)_
-- [ ] 5.5.b Les utilisateurs ne sont pas informés qu'ils interagissent avec un modèle d'IA élaboré par apprentissage automatique
+- [ ] 5.5.a Notre organisation n'utilise pas de modèles d'IA pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA | _(Concerné / Non concerné)_
+- [ ] 5.5.b Les utilisateurs ne sont pas informés qu'ils interagissent avec un modèle d'IA
 - [ ] 5.5.c Une notice d'information est mise à disposition dans les conditions générales d'utilisation du système ou un document équivalent, en libre accès
 - [ ] 5.5.d Le système ou le service est explicite vis-à-vis de l'utilisateur quant au fait qu'un modèle d'IA est utilisé
-- [ ] 5.5.e Le système ou le service propose à l'utilisateur des informations supplémentaires sur les résultats qu'il aurait fourni dans des cas de figure légèrement différents (par exemple des "explications contrefactuelles" comme le plus petit changement dans les données d'entrée qui aurait permis d'arriver à une sortie donnée)
+- [ ] 5.5.e Le système ou le service propose à l'utilisateur des informations supplémentaires sur les résultats qu'il aurait fournis dans des cas de figure légèrement différents (par exemple des "explications contrefactuelles" comme le plus petit changement dans les données d'entrée qui aurait permis d'arriver à une sortie donnée)
 - [ ] 5.5.f Nous sommes pionniers dans l'utilisation de registres publics pour les modèles d'IA, qui nous permettent de fournir de la transparence à nos parties prenantes et également de capter des retours utilisateurs
 
 <details>
 <summary>Expl5.5 :</summary>
 
-Utiliser des systèmes automatiques basés sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interroge le fonctionnement des organisations mais également le rapport des utilisateurs aux systèmes et services numériques. Dans la plupart des cas il est important d'informer les utilisateurs qu'ils ne font pas face à des règles de gestion classiques.
+Utiliser des systèmes automatiques basés sur des modèles d'IA interroge le fonctionnement des organisations mais également le rapport des utilisateurs aux systèmes et services numériques. Dans la plupart des cas, il est important d'informer les utilisateurs qu'ils ne font pas face à des règles de gestion classiques.
 
 </details>
 
@@ -1038,14 +1034,36 @@ _(Type : réponse unique)_
 _(Sélectionner une seule réponse, correspondant le mieux au niveau de maturité de l'organisation sur ce sujet)_
 _(Domaine de risque spécifique : utilisation de modèles d'IA pour son propre compte, fourniture et opération de modèles d'IA à ses clients ou à des tiers)_
 
-- [ ] 5.6.a Notre organisation n'utilise pas de modèles d'IA élaborés par apprentissage automatique pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA | _(Concerné / Non concerné)_
+- [ ] 5.6.a Notre organisation n'utilise pas de modèles d'IA pour son propre compte ou celui de ses clients, et ne fournit pas à ses clients d'application basée sur des modèles d'IA | _(Concerné / Non concerné)_
 - [ ] 5.6.b Nous n'avons pas encore mis en place l'historisation systématique des prédictions issues des modèles utilisés en production
 - [ ] 5.6.c Nous historisons systématiquement toutes les prédictions issues des modèles utilisés en production (associées aux données d'entrée et aux références des modèles concernés)
 
 <details>
 <summary>Expl5.6 :</summary>
 
-Utiliser des systèmes automatiques basés sur des modèles dont les règles ont été apprises interroge donc le fonctionnement des organisations. Il est important de préserver la capacité de réaction et la résilience de l'organisation utilisatrice, notamment pour traiter les cas de figure où les modèles d'IA auront été à l'origine d'un résultat non souhaitable pour l'organisation ou ses parties prenantes. Pour ce faire, l'historistation des prédictions obtenues des modèles (avec les données d'entrée et les références des modèles concernés) est cruciales pour permettre l'auditabilité a posteriori de cas de figure concrets. Il est à noter cependant que les prédictions et les données d'entrée peuvent être des données personnelles soumises au RGPD (auquel cas leur anonymisation peut être une voie à considérer).
+Utiliser des systèmes automatiques basés sur des modèles d'IA interroge donc le fonctionnement des organisations. Il est important de préserver la capacité de réaction et la résilience de l'organisation utilisatrice, notamment pour traiter les cas de figure où les modèles d'IA auront été à l'origine d'un résultat non souhaitable pour l'organisation ou ses parties prenantes. Pour ce faire, l'historisation des prédictions obtenues des modèles (avec les données d'entrée et les références des modèles concernés) est cruciale pour permettre l'auditabilité a posteriori de cas de figure concrets. Il est à noter cependant que les prédictions et les données d'entrée peuvent être des données personnelles soumises au RGPD (auquel cas leur anonymisation peut être une voie à considérer).
+
+</details>
+
+---
+
+Q5.7 : **Maîtrise du Shadow AI (usage d'outils d'IA non validés par l'organisation)**  
+Au-delà des modèles d'IA élaborés ou officiellement validés par votre organisation, des collaborateurs peuvent utiliser de manière autonome des outils d'IA dans le cadre de leur travail, sans validation ni supervision formelle. Sur ce sujet, votre organisation :
+
+R5.7 :  
+_(Type : réponses multiples possibles)_  
+_(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_
+
+- [ ] 5.7.a Nous n'avons pas encore identifié ni évalué ce risque
+- [ ] 5.7.b Nous avons mené une cartographie ou une enquête interne pour identifier les outils d'IA générative utilisés de manière informelle par nos collaborateurs
+- [ ] 5.7.c Nous disposons d'une charte ou politique formalisée encadrant l'utilisation d'outils d'IA générative externes (outils autorisés, données interdites d'usage, cas d'usage proscrits)
+- [ ] 5.7.d Nous sensibilisons et formons régulièrement les collaborateurs aux risques du Shadow AI (fuite de données confidentielles ou personnelles, propriété intellectuelle, fiabilité des réponses, biais)
+- [ ] 5.7.e Nous mettons à disposition des collaborateurs des alternatives validées et sécurisées (e.g. instance d'entreprise, API sous contrat avec garanties de confidentialité et de non-réutilisation des données) pour limiter le recours à des outils non maîtrisés
+
+<details>
+<summary>Expl5.7 :</summary>
+
+Le *Shadow AI* désigne l'usage, par des collaborateurs, d'outils d'IA générative en dehors de tout cadre validé par l'organisation — par analogie avec le *Shadow IT*. Ce risque a pris une ampleur considérable depuis la démocratisation des IA génératives grand public (fin 2022) et constitue aujourd'hui un angle mort fréquent des démarches de gouvernance IA, qui se concentrent souvent sur les modèles que l'organisation élabore ou déploie elle-même sans couvrir les outils tiers adoptés spontanément par les équipes.
 
 </details>
 
@@ -1073,10 +1091,10 @@ _(Sélectionner tous les éléments de réponse correspondant à des pratiques d
 - [ ] 6.1.b Nous avons élaboré des indicateurs définissant ce que nous souhaitons mesurer au sujet de la consommation d'énergie et de l'empreinte carbone de notre activité data science ou de nos modèles
 - [ ] 6.1.c Nous mesurons nos indicateurs régulièrement
 - [ ] 6.1.d Nous incluons leurs mesures dans les cartes d'identité des modèles
-- [ ] 6.1.e La mesure de ces indicateurs et un processus formalisé dans le cadre duquel nous fixons et pilotons des objectifs d'amélioration
-- [ ] 6.1.f Nous consolidons une vue agrégée de la consommation d'énergie et l'empreinte carbone de notre activité data science
+- [ ] 6.1.e La mesure de ces indicateurs est un processus formalisé dans le cadre duquel nous fixons et pilotons des objectifs d'amélioration
+- [ ] 6.1.f Nous consolidons une vue agrégée de la consommation d'énergie et de l'empreinte carbone de notre activité data science
 - [ ] 6.1.g Cette vue agrégée est prise en compte dans l'évaluation de l'impact environnemental global de notre organisation (e.g. bilan carbone, bilan GES réglementaire, score de compatibilité avec l'Accord de Paris...)
-- [ ] 6.1.h La consommation d'énergie et l'empreinte carbone de notre activité data science ou de nos modèles est transparent pour nos parties prenantes et pour le grand public
+- [ ] 6.1.h La consommation d'énergie et l'empreinte carbone de notre activité data science ou de nos modèles sont transparentes pour nos parties prenantes et pour le grand public
 
 <details>
 <summary>Expl6.1 :</summary>
@@ -1146,7 +1164,7 @@ _(Sélectionner tous les éléments de réponse correspondant à des pratiques d
 <details>
 <summary>Expl6.3 :</summary>
 
-Travailler sur de grands volumes de données dont certaines peuvent être sensibles, utiliser des systèmes automatiques basés sur des modèles dont les règles ont été "apprises" (et non définies et formalisées) interrogent le fonctionnement des organisations et la responsabilité individuelle de chacun, impose d'avoir une réflexion sur l'usage qui en est fait. Il est donc important que l'organisation s'assure que les enjeux éthiques ne soient pas inconnus de son personnel.
+Travailler sur de grands volumes de données dont certaines peuvent être sensibles, utiliser des systèmes automatiques basés sur des modèles d'IA interrogent le fonctionnement des organisations et la responsabilité individuelle de chacun, impose d'avoir une réflexion sur l'usage qui en est fait. Il est donc important que l'organisation s'assure que les enjeux éthiques ne soient pas inconnus de son personnel.
 Un exemple qui revient : certains systèmes ou services d'IA conçus pour s'adapter au comportement des utilisateurs peuvent influencer ceux-ci (par exemple en cherchant à maximiser leurs temps d'utilisation ou les sommes qu'ils dépensent) et présenter des risques non négligeables de manipulation ou d'addiction.
 
 </details>
@@ -1161,6 +1179,35 @@ Un exemple qui revient : certains systèmes ou services d'IA conçus pour s'adap
 - (Public declaration) *[Future of Life's AI principles](https://futureoflife.org/ai-principles/)*
 - (Public declaration) *[Charte internationale pour une IA inclusive](https://charteia.arborus.org/)*, Arborus et Orange
 - (Course) *[Practical data ethics](https://ethics.fast.ai/)*, fast.ai : un excellent cours en ligne combinant listes de lectures et vidéos didactiques
+
+</details>
+
+---
+
+Q6.4 : **Répartition de la création de valeur**  
+Dans les cas de figure des projets de data science où plusieurs partenaires concourent aux côtés de votre organisation à l'élaboration d'un modèle, et que celui-ci est ou sera l'objet d'une activité économique :
+
+R6.4 :  
+_(Type : réponses multiples possibles)_  
+_(Sélectionner tous les éléments de réponse correspondant à des pratiques de votre organisation. Attention, certaines combinaisons ne seraient pas cohérentes)_  
+_(Domaine de risque spécifique : rôles et responsabilités morcelés dans les projets de data science)_
+
+- [ ] 6.4.a Notre organisation exerce ses activités de data science de manière autonome, y compris l'élaboration de jeux de données et l'exploitation pour son propre compte des modèles | _(Concerné / Non concerné)_
+- [ ] 6.4.b À ce stade nous n'avons pas structuré cet aspect des projets de data science multi-partenaires
+- [ ] 6.4.c Dans ces cas de figure nous contractualisons le volet économique de la relation avec les parties prenantes impliquées en amont du projet
+- [ ] 6.4.d Notre organisation s'est dotée d'une politique encadrant de manière responsable le partage de valeur avec les parties prenantes impliquées
+
+<details>
+<summary>Expl6.4 :</summary>
+
+Lorsque plusieurs partenaires collaborent pour l'élaboration d'un modèle, il est important que la répartition de valeur consécutive à une activité économique dans laquelle le modèle joue un rôle soit explicitée et contractualisée. Dans certains cas de figure cette question peut être complexe, par exemple lorsqu'un modèle est entraîné de manière distribuée sur plusieurs jeux de données.
+
+</details>
+
+<details>
+<summary>Ressources6.4 :</summary>
+
+- (Code repository) [Exploration of dataset contributivity to a model in collaborative ML projects](https://github.com/SubstraFoundation/distributed-learning-contributivity), un projet open source animé par [ Labelia Labs (ex- Substra Foundation)](https://www.labelia.org/)
 
 </details>
 
