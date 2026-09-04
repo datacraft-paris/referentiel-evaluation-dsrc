@@ -2,13 +2,13 @@
 
 The [evaluation framework](#evaluation-framework-to-assess-the-maturity-of-an-organisation) below is the result of the participatory work initiated in the spring of 2019 by Labelia Labs (ex- Substra Foundation) and ongoing since then. It is based on the identification of the risks that we are trying to prevent by aiming for a responsible and trustworthy practice of data science, and best practices to mitigate them. It also brings together for each topic technical resources that can be good entry points for interested organisations.
 
-Last update: 1st semester 2023.
+Last update: 2nd semester 2026.
 
 ## Evaluation framework to assess the maturity of an organisation
 
 The evaluation is composed of the following 6 sections:
 
-- [Section 1 - Protecting personal or confidential data](#section-1---protecting-personal-or-confidential-data)
+- [Section 1 - Protecting personal or confidential data](#section-1---protecting-personal-or-confidential-data-and-comply-with-regulatory-requirements)
 - [Section 2 - Preventing bias, developing non-discriminatory models](#section-2---preventing-bias-developing-non-discriminatory-models)
 - [Section 3 - Assessing model performance rigorously](#section-3---assessing-model-performance-rigorously)
 - [Section 4 - Ensuring model reproducibility and establishing the chain of accountability](#section-4---ensuring-model-reproducibility-and-establishing-the-chain-of-accountability)
@@ -29,7 +29,7 @@ The use of personal or confidential data carries the risk of exposure of such da
 ---
 
 Q1.1 : **Applicable legislation and contractual requirements - Identification**  
-With regard to personal or confidential data, the legal, statutory, regulatory and contractual requirements in force and concerning your organisation are:
+With regard to personal or confidential data and AI systems, the legal, statutory, regulatory and contractual requirements in force and concerning your organisation are:
 
 R1.1 :  
 _(Type: single answer)_  
@@ -71,7 +71,7 @@ _(Select one answer only, which best corresponds to the level of maturity of the
 - [ ] 1.2.a Informal, based on individual responsibility and competence
 - [ ] 1.2.b Formalized and accessible to all collaborators
 - [ ] 1.2.c Formalized and known by collaborators
-- [ ] 1.2.d Formalized, known by employees, documented for each processing of personal or confidential data
+- [ ] 1.2.d Formalized and known by collaborators, documented for each processing of personal or confidential data, and for each AI system requiring it
 
 <details>
 <summary>Expl1.2 :</summary>
@@ -138,7 +138,7 @@ _(Type: single answer)_
 _(Select one answer only, which best corresponds to the level of maturity of the organisation on this topic)_  
 _(Specific risk domain: use of personal or confidential data)_
 
-- [ ] 1.5.a We take care not to use any personal or confidential data. We are not concerned by this risk area
+- [ ] 1.5.a We take care not to use any personal or confidential data | _(Concerned / Not concerned)_
 - [ ] 1.5.b We need to use personal or confidential data in certain projects and the data minimisation principle is then systematically applied
 - [ ] 1.5.c Employees are aware of the data minimisation principle and generally apply it
 - [ ] 1.5.d The "who can do the most can do the least" reflex with regard to data still exists here and there within our organisation. In some projects, we keep datasets that are much richer in personal and confidential data than what is strictly useful to the project
@@ -150,10 +150,6 @@ _(Specific risk domain: use of personal or confidential data)_
 The data minimisation principle is sometimes also referred to as "privacy by design". It is one of the pillars of the RGPD in the European Union.
 
 </details>
-  
----
-
-_The following elements within this section apply only to organisations that did not select the first response to R1.5. Organisations not concerned are therefore invited to move on to [Section 2](#section-2---preventing-bias-developing-non-discriminatory-models)._
 
 ---
 
@@ -180,17 +176,19 @@ The *Privacy Impact Assessment* (PIA) is a method for assessing the impact of a 
 ---
 
 Q1.7 : **Machine Learning security - Knowledge level**  
-_(Condition: R1.5 <> 1.5.a)_  
+
 Machine Learning security (_ML security_) is a constantly evolving field. In some cases, AI models learned from confidential data may reveal elements of that confidential data (see articles cited in resources). Within your organisation, the general level of knowledge of collaborators working on data science projects about vulnerabilities related to ML models and the techniques to mitigate them is:
 
 R1.7 :  
 _(Type: single answer)_  
 _(Select one answer only, which best corresponds to the level of maturity of the organisation on this topic)_
+_(Specific risk domain: use of AI models trained on personal or confidential data)_
 
-- [ ] 1.7.a Complete beginner
-- [ ] 1.7.b Basic
-- [ ] 1.7.c Confirmed
-- [ ] 1.7.d Expert
+- [ ] 1.7.a We do not use AI models trained on personal or confidential data | _(Concerned / Not concerned)_
+- [ ] 1.7.b Complete beginner
+- [ ] 1.7.c Basic
+- [ ] 1.7.d Confirmed
+- [ ] 1.7.e Expert
 
 <details>
 <summary>Expl1.7 :</summary>
@@ -224,7 +222,7 @@ The state of the art in ML security is constantly evolving. If data scientists a
 ---
 
 Q1.8 : **Machine Learning security - Implementation**  
-_(Condition: R1.5 <> 1.5.a)_  
+_(Condition: R1.7 <> 1.7.a)_  
 Still on the subject of vulnerabilities related to ML models and techniques to mitigate them:
 
 R1.8 :  
@@ -268,8 +266,7 @@ Depending on the level of risk and sensitivity of the projects, certain technica
 ---
 
 Q1.9 : **Notification of safety incidents to the regulatory authorities**  
-_(Condition: R1.5 <> 1.5.a)_  
-In the event that a model that the organisation has developed is used or accessible by one or more external stakeholders, and a new vulnerability is published, there is a risk that it may apply to them and thus create a risk of exposure of personal or confidential data:
+In the event that a model that the organisation has developed is used or accessible by one or more external stakeholders, and a new vulnerability is published, there is a risk that it may apply to them and thus create a risk of exposure of personal or confidential data. What procedures does your organisation have in place?
 
 R1.9 :  
 _(Type: single answer)_  
@@ -307,13 +304,15 @@ Often an initial phase of data science projects consists in gathering and assemb
 
 R2.1 :  
 _(Type: multiple responses possible)_  
-_(Select all the answer items that correspond to practices in your organisation)_
+_(Select all the answer items that correspond to practices in your organisation)_  
+_(Specific risk domain: gathering and assembling raw data into training and validation datasets)_
 
-- [ ] 2.1.a We operate informally on this subject and rely on the practices of each collaborator involved
-- [ ] 2.1.b Our approach includes methods to prevent poisoning attacks when collecting and gathering data samples
-- [ ] 2.1.c Our approach includes methods to check and make sure when necessary that datasets include samples of rare events
-- [ ] 2.1.d Our approach includes methods to complete missing values in datasets
-- [ ] 2.1.e Our approach includes methods to handle erroneous or atypical data samples values
+- [ ] 2.1.a We do not gather and assemble raw data into training and validation datasets ourselves | _(Concerned / Not concerned)_
+- [ ] 2.1.b We operate informally on this subject and rely on the practices of each collaborator involved
+- [ ] 2.1.c Our approach includes methods to prevent poisoning attacks when collecting and gathering data samples
+- [ ] 2.1.d Our approach includes methods to check and make sure when necessary that datasets include samples of rare events
+- [ ] 2.1.e Our approach includes methods to complete missing values in datasets
+- [ ] 2.1.f Our approach includes methods to handle erroneous or atypical data samples values
 
 <details>
 <summary>Expl2.1 :</summary>
@@ -338,10 +337,12 @@ Within data science projects and when developing training datasets, reflection a
 R2.2 :  
 _(Type: single answer)_  
 _(Select one answer only, which best corresponds to the level of maturity of the organisation on this topic)_
+_(Specific risk domain: gathering and assembling raw data into training and validation datasets)_
 
-- [ ] 2.2.a Operates informally on this subject and relies on the practices of each collaborator involved
-- [ ] 2.2.b Does not have a documented approach to the subject, but the collaborators involved are trained on the risks and best practices on the subject
-- [ ] 2.2.c Has a documented approach that is systematically implemented
+- [ ] 2.2.a Does not gather nor assemble training datasets itself | _(Concerned / Not concerned)_
+- [ ] 2.2.b Operates informally on this subject and relies on the practices of each collaborator involved
+- [ ] 2.2.c Does not have a documented approach to the subject, but the collaborators involved are trained on the risks and best practices on the subject
+- [ ] 2.2.d Has a documented approach that is systematically implemented
 
 <details>
 <summary>Expl2.2 :</summary>
@@ -375,7 +376,6 @@ _(Specific risk domain: discrimination against certain social groups)_
 - [ ] 2.3.b Does not have a documented approach to the subject, but the collaborators involved are knowledgeable and trained on the risks and best practices on the subject
 - [ ] 2.3.c Has a documented approach that is systematically implemented to evaluate this type of risk
 
-
 <details>
 <summary>Expl2.3 :</summary>
 
@@ -387,7 +387,6 @@ In certain cases it is obvious if this risk has to be considered or not (e.g. pr
 ---
 
 Q2.4 : **Preventing population bias and discrimination**  
-_(Condition: R2.3 <> 2.3.b)_  
 In cases where the AI models your organisation develops are used in thematic environments where there is a risk of population bias or discrimination against certain social groups (gender, origin, age, etc.):
 
 R2.4 :  
@@ -430,8 +429,7 @@ Complement on the use of synthetic data and _data augmentation_, _re-weighting_ 
 ---
 
 Q2.5 : **Links between modelisation choices and bias**  
-_(Condition : R2.3 <> 2.3.b)_  
-Recent work has shown the role that modeling and learning choices can play in the formation of discriminatory bias. Differential privacy, compression, the choice of the learning rate, early stopping mechanisms for example can have disproportionate impacts on certain subgroups. Within your organisation, the general level of knowledge of collaborators working on data science projects on this topic is:
+Extensive work has shown the role that modeling and learning choices can play in the formation of discriminatory bias. Differential privacy, compression, the choice of the learning rate, early stopping mechanisms for example can have disproportionate impacts on certain subgroups. Preventing such phenomena is therefore not only a matter of datasets. Within your organisation, the general level of knowledge of collaborators working on data science projects on this topic is:
 
 R2.5 :  
 _(Type: single answer)_  
@@ -491,7 +489,7 @@ _(Select all response items that correspond to practices in your organisation. P
 - [ ] 3.1.a Operates informally on this subject and relies on the competence and responsibility of the collaborators involved
 - [ ] 3.1.b Has a documented and systematically implemented approach to isolating test datasets
 - [ ] 3.1.c Uses a tool for versioning and tracing the training and test datasets used, thus enabling the non-contamination of test data to be checked or audited at a later stage
-- [ ] 3.1.d The train-test split technical choices implemented are evaluated, documented and integrated into the model lifecycle documentation of the concerned models
+- [ ] 3.1.d The technical choices made to constitute test datasets (e.g. train-test split) are evaluated, documented and integrated into the model lifecycle documentation of the concerned models
 
 <details>
 <summary>Expl3.1 :</summary>
@@ -531,13 +529,13 @@ In this type of distributed learning project under conditions where the data is 
 ---
 
 Q3.3 : **Analysis of validation and test data**  
-Within data science projects and when developing validation or test datasets, reflection and research on problematic phenomena (e.g. quality of certain data points, data that are not comparable due to recording tools or processes, social phenomena that are undesirable due to time, context, etc.) can be crucial for the meaning of performance scores. Your organisation:
+Within data science projects and when developing validation or test datasets, reflection and research on problematic phenomena (e.g. quality of certain data points, data that are not comparable due to recording tools or processes, social phenomena that are undesirable due to time, context, etc.) can be crucial for the meaning of performance scores (or other evaluation metrics). Your organisation:
 
 R3.3 :  
 _(Type: single answer)_  
 _(Select one answer only, which best corresponds to the level of maturity of the organisation on this topic)_
 
-- [ ] 3.3.a Operates informally on this subject and relies on the practice of each collaborator member involved
+- [ ] 3.3.a Operates informally on this subject, and relies on the practice of each collaborator member involved
 - [ ] 3.3.b Does not have a documented approach to the subject, but the collaborators involved are trained on the risks and best practices on the subject
 - [ ] 3.3.c Has a documented approach that is systematically implemented
 
@@ -596,7 +594,7 @@ _(Specific risk domain: use of AI models in production systems)_
 - [ ] 3.5.b Performance is systematically re-evaluated when the model is updated
 - [ ] 3.5.c Performance is systematically re-evaluated when the context in which the model is used evolves, which may create a risk on the performance of the model due to the evolution of the input data space
 - [ ] 3.5.d The distribution of input data is monitored, and performance is regularly re-evaluated on the basis of updated test data
-- [ ] 3.5.e Random checks are carried out on predictions to check their consistency
+- [ ] 3.5.e Random checks are carried out on the outputs of our models (e.g. predictions) to check their consistency
 - [ ] 3.5.f We do not systematically set up this type of measure
 
 <details>
@@ -637,7 +635,7 @@ _(Select all response items that correspond to practices in your organisation. P
 <details>
 <summary>Expl3.6 :</summary>
 
-The study and selection of relevant decision thresholds for a given data science problem (*threshold selection*) is linked to the metrics selected. As discussed in the resources section of this evaluation issue, in some cases it may be worth considering the possibility of defining ranges of indecision.
+The study and selection of relevant decision thresholds for a given data science problem (*threshold selection*) are linked to the metrics selected. As discussed in the resources section of this evaluation issue, in some cases it may be worth considering the possibility of defining ranges of indecision. For example: requiring human validation when a model's confidence is uncertain, or configuring a RAG/Agent system to decline answering when the relevance threshold of retrieved sources is not met.
 
 </details>
 
@@ -683,7 +681,7 @@ Developing an AI model, and determining a meaningful and reliable benchmark perf
 
 **[Model documentation]**
 
-An AI model is a complex object that can evolve over time. Tracing the stages of its development and evolution allows one to create a **model lifecycle documentation**, which is a prerequisite for **reproducing or auditing** a model. Furthermore, using automatic systems based on models whose rules have been "learned" (and not defined and formalised) questions the way organisations operate. It seems essential to guarantee a clear chain of responsibility, of natural or legal persons, for each model.
+An AI model is a complex object that can evolve over time. Tracing the stages of its development and evolution allows one to create a **model lifecycle documentation**, which is a prerequisite for **reproducing or auditing** a model. Furthermore, using automatic systems based on AI models questions the way organisations operate. It seems essential to guarantee a clear chain of responsibility, of natural or legal persons, for each model.
 
 [_[⇧ back to the list of sections](#evaluation-framework-to-assess-the-maturity-of-an-organisation)_]  
 [_[⇩ next section](#section-5---using-models-responsibly-and-in-confidence)_]
@@ -691,7 +689,7 @@ An AI model is a complex object that can evolve over time. Tracing the stages of
 ---
 
 Q4.1 : **Lifecycle end-to-end documentation of ML models**  
-Ensuring the traceability of all steps of the development of an AI model enables building up a **model lifecycle documentation**. Within your organisation, a lifecycle documentation of models is fed and maintained within the framework of data science projects, throughout the phases of data collection, design, training, validation and exploitation of the predictive models:
+Ensuring the traceability of all steps of the development of an AI model enables building up a **model lifecycle documentation**. Within your organisation, a lifecycle documentation of models is fed and maintained within the framework of data science projects, throughout the phases of data collection, design, training or configuration, validation and exploitation, and decommissioning of the models:
 
 R4.1 :  
 _(Type: single answer)_  
@@ -699,8 +697,9 @@ _(Select one answer only, which best corresponds to the level of maturity of the
 
 - [ ] 4.1.a At this stage we have not implemented any such approach
 - [ ] 4.1.b This information exists and is recorded so as not to be lost, but it may be scattered and it is not versioned
-- [ ] 4.1.c They are compiled in a single document which systematically accompanies the model
-- [ ] 4.1.d They are gathered in a single document that systematically accompanies the model and is versioned
+- [ ] 4.1.c They are compiled in a documentation which systematically accompanies the model
+- [ ] 4.1.d They are compiled in a documentation that systematically accompanies the model and is versioned
+- [ ] 4.1.e They are compiled in a documentation that systematically accompanies the model, is versioned, and is accessible to all concerned stakeholders
 
 <details>
 <summary>Expl4.1 :</summary>
@@ -715,7 +714,7 @@ This concept of "model lifecycle documentation" of a learned AI model can take t
 - (Software & Tools) [Substra Framework](http://doc.substra.ai/): *an open source framework offering distributed orchestration of machine learning tasks among partners while guaranteeing secure and trustless traceability of all operations*
 - (Software & Tools) [MLflow](https://mlflow.org/): *an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry*
 - (Software & Tools) [DVC](https://dvc.org/): *an Open-source Version Control System for Machine Learning Projects*
-- (Software & Tools) [DAGsHub](https://dagshub.com/docs/): *a platform for data version control and collaboration, based on DVC* *a platform for data version control and collaboration, based on DVC*
+- (Software & Tools) [DAGsHub](https://dagshub.com/docs/): *a platform for data version control and collaboration, based on DVC*
 - (Software & Tools) [Model lifecycle template](https://github.com/dataforgoodfr/batch8_substra/blob/master/G%C3%A9n%C3%A9alogie%20de%20bout-en-bout/Genealogie-de-bout-en-bout_template.md): *template for Data Scientists to help collect all the information in order to trace the lifecycle from end to end of a model*, 2020, Joséphine Lecoq-Vallon
 - (Academic paper) [System-Level Transparency of Machine Learning](https://ai.facebook.com/research/publications/system-level-transparency-of-machine-learning), 2022, Meta AI: *System Cards aims to increase the transparency of ML systems by providing stakeholders with an overview of different components of an ML system, how these components interact, and how different pieces of data and protected information are used by the system*
 
@@ -759,13 +758,12 @@ Q4.3 : **Analysis and publications of incidents reports**
 In data science projects, when unexpected behaviour of a model is observed:
 
 R4.3 :  
-_(Type: multiple responses possible)_  
-_(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_
+_(Type: single answer)_  
+_(Select one answer only, which best corresponds to the level of maturity of the organisation on this topic)_
 
 - [ ] 4.3.a At this stage we do not analyse the incidents or unexpected behaviour observed
 - [ ] 4.3.b We analyse incidents or unexpected behaviour encountered, but don't publish or share it
 - [ ] 4.3.c We analyse incidents or unexpected behaviour encountered and publish them when relevant (e.g. article, blog)
-- [ ] 4.3.d We get involved in clubs, networks or professional associations in the field of data science, and give feedback on incidents of unexpected behaviour that we observe
 
 <details>
 <summary>Expl4.3 :</summary>
@@ -794,7 +792,7 @@ _(Type: multiple responses possible)_
 _(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_  
 _(Specific risk domain: roles and responsibilities in data science projects are divided up multiple actors)_
 
-- [ ] 4.4.a Within our organisation, data science projects are carried out end-to-end by autonomous teams, including the elaboration of datasets and the exploitation of models for its own account. Consequently, for each project, an autonomous team is solely responsible | _(Concerned / Not concerned)_
+- [ ] 4.4.a Within our organisation, data science projects are carried out end to end by autonomous teams, including the elaboration of datasets and the exploitation of models for its own account. Consequently, for each project, an autonomous team is solely responsible | _(Concerned / Not concerned)_
 - [ ] 4.4.b We systematically identify the risks and responsibilities of each of the internal and external stakeholders with whom we work
 - [ ] 4.4.c We systematically enter into contracts with upstream (e.g. data suppliers) and downstream (e.g. customers, model-using partners) players
 - [ ] 4.4.d We do not systematically implement this type of measure
@@ -829,30 +827,26 @@ As in the reference frameworks of IS management (ISO 27001) or GDPR in the Europ
 
 ---
 
-Q4.6 : **Distribution of the value creation**  
-In the case of data science projects where several partners work alongside your organisation to develop a model, and that model is or will be the subject of an economic activity:
+Q4.6 : **Use of external AI models or systems**  
+Many data science projects today rely, in whole or in part, on external AI models or components rather than on a model entirely designed and trained in-house — whether a model used as-is (API, encoder, foundation model) or integrated as a building block within a larger system designed by the organisation (for example an agent relying on a third-party LLM). Regarding the attention paid to these external models or components, your organisation:
 
 R4.6 :  
 _(Type: multiple responses possible)_  
 _(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_  
-_(Specific risk domain: roles and responsibilities in data science projects are divided up multiple actors)_
+_(Specific risk domain: use of external AI models or components)_
 
-- [ ] 4.6.a Our organisation carries out its data science activities autonomously, including the development of datasets and the exploitation of models for its own account. It is therefore not concerned | _(Concerned / Not concerned)_
-- [ ] 4.6.b At this stage we have not structured this aspect of multi-partner data science projects
-- [ ] 4.6.c In these cases, we contract the economic aspect of the relationship with the stakeholders involved upstream of the project
-- [ ] 4.6.d Our organisation has a policy that responsibly frames the sharing of value with the stakeholders involved
+- [ ] 4.6.a Does not use external AI models or components | _(Concerned / Not concerned)_
+- [ ] 4.6.b Operates informally on this subject, without systematic prior study
+- [ ] 4.6.c Studies what the provider communicates about the known vulnerabilities, biases and limitations of the model or component, and takes it into account when deciding on its integration
+- [ ] 4.6.d Maintains a watch on the changes to the model or component decided by the provider (update, deprecation, version change), in order to anticipate their impact on the intended uses
+- [ ] 4.6.e Implements practices to limit the consequences on the concerned systems when a vulnerability or a significant change is identified on the provider's side
+- [ ] 4.6.f Documents these practices and integrates them into the project lifecycle documentation, in the same way as for models developed in-house
 
 <details>
 <summary>Expl4.6 :</summary>
 
-When several partners work together to develop a model, it is important that the distribution of value resulting from an economic activity in which the model plays a role is made explicit and contractualized. In some cases this can be a complex issue, for example when a model is trained in a distributed manner over several datasets.
-
-</details>
-
-<details>
-<summary>Ressources4.6 :</summary>
-
-- (Code repository) [Exploration of dataset contributivity to a model in collaborative ML projects](https://github.com/SubstraFoundation/distributed-learning-contributivity), an open source project led by [ Labelia Labs (ex- Substra Foundation)](https://www.labelia.org/)
+The rise of foundation models, generative AI APIs and pre-trained model hubs has deeply changed data science practice. Many projects no longer involve designing a model from scratch, but integrating or adapting a third-party model or component — either directly (a model used as-is through an API) or indirectly (a system or an agent designed in-house, but relying on an external pre-trained model as a foundation).
+This evolution shifts part of the risk: it is no longer only about mastering what one builds, but about evaluating and monitoring over time what one chooses to use. Unlike a model developed in-house, an external model evolves on a schedule the organisation does not control (silent update, deprecation, flaw discovered after the fact by the community), which makes ongoing monitoring at least as important as the initial study.
 
 </details>
 
@@ -863,7 +857,7 @@ When several partners work together to develop a model, it is important that the
 
 **[Using the models]**
 
-An AI model can be used as an automatic system, whose rules or criteria are not written _in extenso_ and are difficult to explain, discuss or adjust. Using automatic systems based on AI models whose rules have been "learned" (and not defined and formalised) therefore questions the way organisations design and operate their products and services. It is important to preserve the responsiveness and resilience of organisations using those AI models, particularly in dealing with situations where AI models have led to an undesirable outcome for the organisation or its stakeholders. In addition, efforts are therefore needed on the interpretation and explanation of the choices made using these systems.
+An AI model can be used as an automatic system, whose functioning is difficult to explain, discuss or adjust. This questions the way organisations using such models design and operate their products and services. It is important to preserve the responsiveness and resilience of organisations using those AI models, particularly in dealing with situations where AI models have led to an undesirable outcome for the organisation or its stakeholders. In addition, efforts are needed on the interpretation and explanation of the choices made using these systems.
 
 [_[⇧ back to the list of sections](#evaluation-framework-to-assess-the-maturity-of-an-organisation)_]  
 [_[⇩ next section](#section-6---anticipating-monitoring-and-minimising-the-negative-externalities-of-data-science-activities)_]
@@ -878,10 +872,10 @@ _(Type: multiple responses possible)_
 _(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_  
 _(Specific risk domain: use of AI models, provision or operation of AI model-based applications for customers or third parties)_
 
-- [ ] 5.1.a Our organisation does not use ML models on its own behalf | _(Concerned / Not concerned)_
+- [ ] 5.1.a Our organisation does not use AI models on its own behalf | _(Concerned / Not concerned)_
 - [ ] 5.1.b **An AI models register** identifies all the models used by the organisation and is kept up-to-date
-- [ ] 5.1.c For each model there is an **owner** defined, identifiable and easily contactable
-- [ ] 5.1.d For each model, we systematically carry out a **risk assessment** following any incidents, failures or biases
+- [ ] 5.1.c For each model, there is an **owner** defined, identifiable and easily contactable
+- [ ] 5.1.d For each model, we systematically carry out a **risk assessment** following any incidents, failures and biases
 - [ ] 5.1.e Monitoring tools are put in place to ensure continuous monitoring of systems based on AI models and can trigger alerts directly to the team in charge
 - [ ] 5.1.f For each model, we define and test a procedure for suspending the model and a degraded operating mode without the model, in order to prepare for the case where the model is subject to failure or unexpected behaviour
 - [ ] 5.1.g For each model, we study its entire lifecycle (all the steps and choices that led to its development and evaluation), as well as its conditions and limits of validity, in order to understand the model before using it
@@ -891,7 +885,7 @@ _(Specific risk domain: use of AI models, provision or operation of AI model-bas
 <details>
 <summary>Expl5.1 :</summary>
 
-Using automatic systems based on models whose rules have been "learned" (and not defined and formalised) questions the way organisations design and operate their products and services. It is important to assess the consequences and reactions in the event of an incident. Furthermore, it is important that persons in charge is clearly identified so that no stakeholder is left helpless in the face of an unexpected or inappropriate consequence. Finally, it is important to consider the "conditions and limits of validity" of the models used to ensure that the intended use is appropriate.
+Using automatic systems based on AI models questions the way organisations design and operate their products and services. It is important to assess the consequences and reactions in the event of an incident. Furthermore, it is important that persons in charge is clearly identified so that no stakeholder is left helpless in the face of an unexpected or inappropriate consequence. Finally, it is important to consider the "conditions and limits of validity" of the models used to ensure that the intended use is appropriate.
 
 </details>
 
@@ -905,27 +899,27 @@ _(Type: multiple responses possible)_
 _(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_  
 _(Specific risk domain: use of AI models, provision or operation of AI model-based applications for customers or third parties)_
 
-- [ ] 5.2.a Our organisation does not provide its customers or third parties, nor does it operates on behalf of third parties, with applications based on ML models | _(Concerned / Not concerned)_
+- [ ] 5.2.a Our organisation does not provide its customers or third parties, nor does it operates on behalf of third parties, with applications based on AI models | _(Concerned / Not concerned)_
 - [ ] 5.2.b **An AI models register** identifies all models or applications used by its customers and/or by the organisation on behalf of third parties, and is kept up-to-date
-- [ ] 5.2.c For each model or application for a customer or a third party we have a defined, identifiable and easily reachable **owner**
-- [ ] 5.2.d For each model or application for a customer or a third party, we systematically carry out a **risk assessment** resulting from possible incidents, failures, biases, etc., in order to identify the risks involved
+- [ ] 5.2.c For each model or application for a customer or a third party, we have a defined, identifiable and easily reachable **owner**
+- [ ] 5.2.d For each model or application for a customer or a third party, we systematically carry out a **risk assessment** resulting from possible incidents, failures and biases
 - [ ] 5.2.e Monitoring tools are in place to ensure continuous monitoring of ML systems and can trigger alerts directly to the responsible team
 - [ ] 5.2.f For each model or application for a customer or a third party, we define and test a procedure for suspending the model and a degraded operating mode without the model, in order to prepare for the case where the model is subject to failure or unexpected behaviour
-- [ ] 5.2.g For each model or application for a client or third party, we study its entire lifecycle and its conditions and limits of validity to understand the model before using it
+- [ ] 5.2.g For each model or application for a client or third party, we study its end-to-end lifecycle and its conditions and limits of validity to understand the model before using it
 - [ ] 5.2.h We supply our customers or operate on their behalf with models or applications for **uses in accordance with their conditions and limits of validity**
 - [ ] 5.2.i We have not yet put in place such measures
 
 <details>
 <summary>Expl5.2 :</summary>
 
-Using automatic systems based on models whose rules have been "learned" (and not defined and formalised) questions the way organisations design and operate their products and services. It is important to assess the consequences and reactions in the event of an incident. Furthermore, it is important that persons in charge is clearly identified so that no stakeholder is left helpless in the face of an unexpected or inappropriate consequence. Finally, it is important to consider the "conditions and limits of validity" of the models used to ensure that the intended use is appropriate.
+Using automatic systems based on AI models questions the way organisations design and operate their products and services. It is important to assess the consequences and reactions in the event of an incident. Furthermore, it is important that persons in charge is clearly identified so that no stakeholder is left helpless in the face of an unexpected or inappropriate consequence. Finally, it is important to consider the "conditions and limits of validity" of the models used to ensure that the intended use is appropriate.
 
 </details>
 
 ---
 
-Q5.3 : **Management of problematic predictions, bypass process, _human agency_**  
-Automatic systems, especially when based on AI models, are used in production generally to gain efficiency. By nature, they occasionally generate undesirable results for the organisation and its stakeholders (e.g. wrong prediction), as they will never achieve 100% performance.
+Q5.3 : **Management of problematic predictions, bypass process, human oversight**  
+Automatic systems, especially when based on AI models, are used in production generally to gain efficiency. By nature, they occasionally generate undesirable results for the organisation and its stakeholders. On this topic:
 
 R5.3 :  
 _(Type: single answer)_  
@@ -935,13 +929,13 @@ _(Specific risk domain: use of AI models, provision or operation of AI model-bas
 - [ ] 5.3.a Our organisation does not use AI models on its own behalf or on behalf of its clients, and does not provide its clients with applications based on AI models | _(Concerned / Not concerned)_
 - [ ] 5.3.b We implement AI models in integrated automatic systems, without mechanisms to overcome or avoid undesirable results due to model predictions
 - [ ] 5.3.c We integrate, in automatic systems based on AI models, the functionalities to manage these cases of undesirable results. For such cases, we set up mechanisms allowing a human operator to go against an automatic decision to manage such undesirable results or incidents
-- [ ] 5.3.d In addition to incident management mechanisms, in automatic systems based on AI models, when the confidence interval for the automatic decision is not satisfactory a human operator is called upon
-- [ ] 5.3.e We systematically apply the principle of "human agency", the outputs of the AI models that we implement are used by human operators, and do not serve as determinants for automatic decisions
+- [ ] 5.3.d In addition to incident management mechanisms, in automatic systems based on AI models, when the reliability indicator for the automatic decision is not satisfactory a human operator is called upon
+- [ ] 5.3.e We systematically carry out a risk analysis and apply, where necessary, the principle of human oversight. The outputs of the AI models that we implement are used by human operators, and do not serve as determinants for automatic decisions
 
 <details>
 <summary>Expl5.3 :</summary>
 
-Using automatic systems based on models whose rules have been "learned" (and not defined and formalised) questions the way organisations design and operate their products and services. It is important to preserve the responsiveness and resilience of the organisation.
+Using automatic systems based among others on AI models questions the way organisations design and operate their products and services. It is important to preserve the responsiveness and resilience of the organisation.
 
 </details>
 
@@ -964,9 +958,8 @@ _(Select all response items that correspond to practices in your organisation. P
 
 - [ ] 5.4.a Our organisation is not yet familiar with the methods and tools for explaining and interpreting AI models
 - [ ] 5.4.b We are interested in the explicability and interpretability of AI models and are in dialogue with our stakeholders on this subject
-- [ ] 5.4.c We ensure that the models we develop provide, when relevant, at least a level of confidence together with each prediction made
-- [ ] 5.4.d We determine the best compromises between performance and interpretability for each model we develop, which sometimes leads us to opt for a model that is simpler to explain to the stakeholders
-- [ ] 5.4.e We master and implement advanced approaches for the explicability and interpretability of models
+- [ ] 5.4.c We ensure that the models we develop provide, when relevant, at least a level of confidence together with each output produced
+- [ ] 5.4.d We master and implement considered approaches for the explicability and interpretability of models
 
 <details>
 <summary>Expl5.4 :</summary>
@@ -1000,7 +993,7 @@ _(Select all response items that correspond to practices in your organisation. P
 _(Specific risk domain: use of AI models, provision or operation of AI model-based applications for customers or third parties)_
 
 - [ ] 5.5.a Our organisation does not use AI models on its own behalf or on behalf of its clients, and does not provide its clients with applications based on AI models | _(Concerned / Not concerned)_
-- [ ] 5.5.b Users are not informed that they are interacting with an AI model developed with machine learning methods
+- [ ] 5.5.b Users are not informed that they are interacting with an AI model
 - [ ] 5.5.c An information notice is made available in the terms and conditions of the system or an equivalent document, freely accessible
 - [ ] 5.5.d The system or service is explicit to the user that an AI model is being used
 - [ ] 5.5.e The system or service provides the user with additional information on the results it would have provided in slightly different scenarios (e.g. "counterfactual explanations" such as the smallest change in input data that would have resulted in a given different output)
@@ -1009,7 +1002,7 @@ _(Specific risk domain: use of AI models, provision or operation of AI model-bas
 <details>
 <summary>Expl5.5 :</summary>
 
-Using automatic systems based on models whose rules have been "learned" (and not defined and formalised) questions the functioning of organisations but also the relationship of users to digital systems and services. In most cases it is important to inform users that they are not interacting with conventional business rules.
+Using automatic systems based on AI models questions the functioning of organisations but also the relationship of users to digital systems and services. In most cases, it is important to inform users that they are not interacting with conventional business rules.
 
 </details>
 
@@ -1040,7 +1033,29 @@ _(Specific risk domain: use of AI models, provision or operation of AI model-bas
 <details>
 <summary>Expl5.6 :</summary>
 
-Using automatic systems based on AI models whose rules have been learned questions the way organisations design and operate their products and services. It is important to preserve the responsiveness and resilience of organisations using those AI models, particularly in dealing with situations where AI models have led to an undesirable outcome for the organisation or its stakeholders. To that end, logging predictions from AI models used in production (coupled with the input data and the associated models references) is key to enable ex-post auditability on concrete use cases. It should be noted that predictions might involve personal data and be regulated by GDPR. Anonymization of processed data, when logged & made available to customers or internal operators, could be part of a solution to avoid leaking sensitive information.
+Using automatic systems based on AI models questions the way organisations design and operate their products and services. It is important to preserve the responsiveness and resilience of organisations using those AI models, particularly in dealing with situations where AI models have led to an undesirable outcome for the organisation or its stakeholders. To that end, logging predictions from AI models used in production (coupled with the input data and the associated models references) is key to enable ex-post auditability on concrete use cases. It should be noted that predictions might involve personal data and be regulated by GDPR. Anonymization of processed data, when logged & made available to customers or internal operators, could be part of a solution to avoid leaking sensitive information.
+
+</details>
+
+---
+
+Q5.7 : **Managing Shadow AI (use of AI tools not validated by the organisation)**  
+Beyond the AI models developed or officially validated by your organisation, collaborators may independently use AI tools in the course of their work, without formal validation or supervision. On this topic, your organisation:
+
+R5.7 :  
+_(Type: multiple responses possible)_  
+_(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_
+
+- [ ] 5.7.a We have not yet identified or assessed this risk
+- [ ] 5.7.b We have carried out a mapping or an internal survey to identify the generative AI tools informally used by our collaborators
+- [ ] 5.7.c We have a formalised charter or policy framing the use of external generative AI tools (authorised tools, data that must not be used, prohibited use cases)
+- [ ] 5.7.d We regularly raise awareness and train collaborators on the risks of Shadow AI (leakage of confidential or personal data, intellectual property, reliability of outputs, bias)
+- [ ] 5.7.e We provide collaborators with validated and secured alternatives (e.g. enterprise instance, API under contract with confidentiality and no-data-reuse guarantees) to limit recourse to uncontrolled tools
+
+<details>
+<summary>Expl5.7 :</summary>
+
+*Shadow AI* refers to the use, by collaborators, of generative AI tools outside any framework validated by the organisation — by analogy with *Shadow IT*. This risk has grown considerably since the mainstream adoption of consumer generative AI (late 2022) and is today a frequent blind spot of AI governance approaches, which often focus on the models the organisation develops or deploys itself without covering third-party tools spontaneously adopted by teams.
 
 </details>
 
@@ -1071,7 +1086,7 @@ _(Select all the answer items that correspond to practices in your organisation)
 - [ ] 6.1.e Monitoring our indicators on a regular basis is a formalised and controlled process, from which we define and drive improvement objectives
 - [ ] 6.1.f We consolidate an aggregated view of the energy consumtion and carbon footprint of our data science activities
 - [ ] 6.1.g This aggregated view is taken into account in the global environmental impact evaluation of our organization (e.g. carbon footprint, regulatory GHG evaluation, Paris Agreement compatibility score...)
-- [ ] 6.1.h The energy consumption and carbon footprint of our data science activity or our models is made transparent to our counterparts and the general public
+- [ ] 6.1.h The energy consumption and carbon footprint of our data science activity or our models are made transparent to our counterparts and the general public
 
 <details>
 <summary>Expl6.1 :</summary>
@@ -1141,7 +1156,7 @@ _(Select all response items that correspond to practices in your organisation. P
 <details>
 <summary>Expl6.3 :</summary>
 
-Working with large volumes of data, some of which may be sensitive, using automatic systems based on models whose rules have been "learned" (and not defined and formalised) raises questions about the way organisations function and the individual responsibility of each contributor. It requires considering carefully the uses of such sytems. It is therefore important for the organisation to ensure that ethical issues are not unknown to its collaborators.
+Working with large volumes of data, some of which may be sensitive, using automatic systems based on AI models raises questions about the way organisations function and the individual responsibility of each contributor. It requires considering carefully the uses of such sytems. It is therefore important for the organisation to ensure that ethical issues are not unknown to its collaborators.
 A recurring example is that some AI systems or services designed to adapt to user behaviour may influence users (e.g. by seeking to maximise their time of use or the money they spend) and present significant risks of manipulation or addiction.
 
 </details>
@@ -1156,6 +1171,35 @@ A recurring example is that some AI systems or services designed to adapt to use
 - (Public declaration) *[Future of Life's AI principles](https://futureoflife.org/ai-principles/)*
 - (Public declaration) *[International Charter for Inclusive AI](https://charteia.arborus.org/)*, Arborus and Orange
 - (Course) *[Practical data ethics](https://ethics.fast.ai/)*, fast.ai: an excellent online course combining reading lists and instructional videos
+
+</details>
+
+---
+
+Q6.4 : **Distribution of the value creation**  
+In the case of data science projects where several partners work alongside your organisation to develop a model, and that model is or will be the subject of an economic activity:
+
+R6.4 :  
+_(Type: multiple responses possible)_  
+_(Select all response items that correspond to practices in your organisation. Please note that some combinations would not be coherent)_  
+_(Specific risk domain: roles and responsibilities in data science projects are divided up multiple actors)_
+
+- [ ] 6.4.a Our organisation carries out its data science activities autonomously, including the development of datasets and the exploitation of models for its own account | _(Concerned / Not concerned)_
+- [ ] 6.4.b At this stage we have not structured this aspect of multi-partner data science projects
+- [ ] 6.4.c In these cases, we contract the economic aspect of the relationship with the stakeholders involved upstream of the project
+- [ ] 6.4.d Our organisation has a policy that responsibly frames the sharing of value with the stakeholders involved
+
+<details>
+<summary>Expl6.4 :</summary>
+
+When several partners work together to develop a model, it is important that the distribution of value resulting from an economic activity in which the model plays a role is made explicit and contractualized. In some cases this can be a complex issue, for example when a model is trained in a distributed manner over several datasets.
+
+</details>
+
+<details>
+<summary>Ressources6.4 :</summary>
+
+- (Code repository) [Exploration of dataset contributivity to a model in collaborative ML projects](https://github.com/SubstraFoundation/distributed-learning-contributivity), an open source project led by [ Labelia Labs (ex- Substra Foundation)](https://www.labelia.org/)
 
 </details>
 
